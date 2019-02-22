@@ -1,0 +1,238 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2018-2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+TITLE: Docker Introduction
+
+* Introduction
+** Learning Objectives
+   - Explain definitions of virtual machine and virtual machine monitor
+   - Explain and contrast virtualization and containerization
+     - Including isolation
+     - Including layering
+   - Use Docker for simple tasks
+     - E.g., start Web server with static files
+     - Interpret and modify simple docker files
+
+** Core Questions
+   - What do virtualization and containerization mean?
+   - How to deploy potentially complex software in a reproducible fashion?
+
+* Virtualization
+** History
+   - Virtualization is an old concept
+     - IBM mainframes, 1960s
+     - Frequently cited survey article by Goldberg, 1974: cite:Gol74
+     - Original motivation
+       - Resources of *expensive* mainframes better utilized with
+	 multiple VMs
+       - Ability to run different OS versions in parallel,
+         *backwards compatibility*
+   - 1980s, 1990s
+     - Modern multitasking OSs on *cheap* hardware
+       - Little use of virtualization, no hardware support any longer
+   - Since ca. 2005
+     - PC success becomes *problematic*
+       - Energy usage, management overhead
+     - Virtualization for *server consolidation*, *cloud computing*
+
+** Intuition and Examples
+   :PROPERTIES:
+   :CUSTOM_ID: virtualization-examples
+   :END:
+   - Virtualization: Creation of virtual/abstract version of something
+     - Hardware/system: virtual machine (VM)
+     - Virtual memory, recall [[file:../../OS/Operating-Systems-08-Memory-I.org][OS concepts]]
+     - Network, e.g.,
+       [[https://en.wikipedia.org/wiki/Overlay_network][overlay networks]],
+       [[https://en.wikipedia.org/wiki/Software-defined_networking][software-defined networking]]
+     - Execution environment (e.g., Java, Dotnet)
+   - Typical meaning: *virtual machine* (VM)
+     - Virtual hardware
+       - Several OSs share same underlying hardware
+     - VMs isolated from each other
+
+# TODO clarify
+
+** Definitions
+   :PROPERTIES:
+   :CUSTOM_ID: virtualization-definition
+   :END:
+   - Cited from cite:PG74 (bold face added)
+     - “A *virtual machine* is taken to be an /efficient/, /isolated
+       duplicate/ of the real machine.”
+     - Made precise with *Virtual Machine Monitor* (VMM)
+       - “First, the VMM provides an *environment* for programs which is
+         *essentially identical* with the original machine; second,
+         programs run in this environment show at worst only *minor
+         decreases in speed*; and last, the VMM is in *complete control*
+         of system resources.”
+	 - Essentially identical: Programs with same results, maybe
+           different timing
+	 - Speed: Most instructions executed directly by CPU with no
+           VMM intervention
+	 - Control: (1) Virtualized programs restricted to
+           resources allocated by VMM, (2) VMM can regain control over
+           allocated resources
+       - “A /virtual machine/ is the environment created by the virtual
+         machine monitor.”
+
+** Isolation
+   - Isolation of VMs: Illusion of exclusive hardware use (despite
+     sharing between VMs)
+     - Related to “isolated duplicate” and “complete control” of cite:PG74
+   - Sub-types (see cite:SPF+07,FFR+15)
+     - Resource isolation: Fair allocation and scheduling
+       - Reservation (e.g., number of CPU cores and amount of RAM)
+	 vs best-effort
+     - Fault isolation: Buggy component should not affect others
+     - Security isolation
+       - Configuration independence (global names/settings do not conflict)
+	 - Applications with conflicting requirements for system-wide configuration
+	 - E.g., port 80 for Web servers, each application with own
+           version of shared libraries
+       - Safety (no access between VMs/containers)
+       - Beware! Lots of security issues in practice
+	 - E.g.,
+	   [[https://www.startpage.com/do/search?q=hypervisor+privilege+escalation][hypervisor privilege escalation]]
+	   and [[https://www.startpage.com/do/search?q=cross-vm+side+channel+attack][cross-VM side channel attacks]]
+
+** Layering with Virtualization
+   :PROPERTIES:
+   :CUSTOM_ID: virtualization
+   :END:
+   {{{reveallicense("./figures/OS/virtual-machines.meta","60vh")}}}
+
+*** Layering Explained
+    - Hypervisor or virtual machine manager (VMM) with full access to
+      physical hardware
+      - Most privileged code
+	- Details depend on CPU hardware
+	  - E.g., [[file:../../OS/Operating-Systems-02-Interrupts.org::#kernel-mode][kernel mode]] (CPU ring 0)
+            or additional “root mode” with more privileges than kernel mode
+      - Create abstract versions of hardware, to be used by *guest OSs*
+	- VM = Guest OS running on abstract hardware
+	- Host = Environment in which the VMM runs
+	  - Host software may be full OS or specialized
+    - Guest OS is *de-privileged*
+      - No longer with full hardware access, e.g., CPU ring 1
+      - Privileged/sensitive instructions lead to hypervisor
+	- Executed, translated, or emulated accordingly
+
+#+REVEAL: split
+    - Each VM can run different OS
+    - VM backups/snaphots *simplify* management, placement, parallelization
+    - Sharing among applications in different VMs *restricted*, requires networking
+      - (Neither shared memory nor file nor pipes)
+    - Creation of more VMs with *high overhead*
+      - Each with full OS, own portion of underlying hardware
+
+** Review Question
+   - Discuss in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]]
+     which of the [[#virtualization-examples][variants of virtualization]]
+     fulfill which conditions for [[#virtualization-definition][virtualization as defined in 1974]].
+
+* Containerization
+** Basics
+   - Motivation: Trade isolation for efficiency (see cite:SPF+07)
+     - *Main idea* of containerization: *Share kernel* among containers
+       - (Instead of separate OS per VM)
+   - Mechanisms
+     - Add container ID to each process, add new
+       access control checks to [[file:../../OS/Operating-Systems-01-Introduction.org::#system-calls][system calls]]
+     - In case of Linux kernel
+       - Kernel [[https://en.wikipedia.org/wiki/Linux_namespaces][namespaces]]
+	 - Limit what is visible inside container
+       - [[https://en.wikipedia.org/wiki/Cgroups][Control groups (cgroups)]]
+	 - Limit resource usage
+       - Copy-on-write, e.g., [[https://en.wikipedia.org/wiki/UnionFS][UnionFS]]
+	 - New container without copying all files, localized changes
+
+** Layering with Containerization
+   :PROPERTIES:
+   :CUSTOM_ID: containerization
+   :END:
+   {{{reveallicense("./figures/OS/containers.meta","60vh")}}}
+
+** Selected Technologies
+   - [[https://www.docker.com/what-docker][Docker]]
+     {{{reveallicense("./figures/logos/docker-horizontal.meta","10vh")}}}
+     - *Image* describes OS/application environment: What software/configuration?
+       - *Registries* publish images
+       - [[https://docs.docker.com/develop/develop-images/dockerfile_best-practices/][Dockerfiles]]
+	 are build recipes for images in simple text format
+     - *Container* is an instance of image (image is template
+       for container)
+   - [[https://kubernetes.io/docs/tutorials/kubernetes-basics/][Kubernetes]]
+     {{{reveallicense("./figures/logos/kubernetes.meta","10vh")}}}
+     - Cluster manager for Docker
+       - Pod = group of containers sharing resources, unit of deployment
+       - Pods can be replicated (copied) for scalability
+       - Integrated load-balancer
+
+*** On Images
+    - With VMs, you could install software as in any other OS
+      - Getting messy over time
+    - With Docker, images are defined via Dockerfiles
+      - Explicitly listing necessary pieces and dependencies
+      - Enforcing order and reproducibility
+      - [[https://gitlab.com/oer/docker/blob/master/emacs-tex/Dockerfile][Sample dockerfile]]
+        ([[https://gitlab.com/oer/oer-on-oer-infrastructure/blob/master/.gitlab-ci.yml][used]]
+        to generate reveal.js presentations and PDF from org files):
+#+BEGIN_SRC
+FROM ubuntu
+LABEL maintainer="Jens Lechtenbörger"
+RUN apt-get update && apt-get --no-install-recommends install -y \
+    ca-certificates emacs git \
+    texlive-bibtex-extra texlive-fonts-recommended texlive-generic-recommended \
+    texlive-latex-base texlive-latex-extra texlive-latex-recommended
+COPY manage-packages.el /tmp/
+#+END_SRC
+
+* Docker
+
+** Docker Tutorial
+   :PROPERTIES:
+   :CUSTOM_ID: docker-tutorial
+   :END:
+   - Work through [[https://smancke.github.io/docker-intro/][Docker Intro]]
+     - (Space and Backspace switch slides)
+     - Up to and including the [[https://smancke.github.io/docker-intro/#?slide=17][Exercise on Interaction and debugging]]
+
+# TODO explain first, beware of Windows!
+
+** Review Questions
+   - Submit solutions to the following tasks in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]].
+     - Discuss which conditions for
+       [[#virtualization-definition][virtualization as defined in 1974]]
+       are satisfied by Docker.
+     - What did you observe as part of the [[#docker-tutorial][tutorial]]
+       when comparing
+       “the output of ~ps aux~ from your container with the host”?
+
+** Dockerfiles and GitLab
+   - In class
+
+* Conclusions
+** Summary
+   - Virtual *virtual machines* are *efficient*, *isolated*
+     *duplicates* of the real machine
+   - Virtual machines and containers
+     - can be contrasted in terms of their layering approaches
+     - allow to deploy software in well-defined environments
+
+** Concluding Questions
+   - Submit your answer to the following question in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]].
+   - What did you find difficult or confusing about the *contents* of
+     the presentation?  Please be as specific as possible.  For
+     example, you could describe your current understanding (which
+     might allow us to identify misunderstandings), ask questions that
+     allow us to help you, or suggest improvements (ideally by
+     creating an issue or pull request in
+     [[https://gitlab.com/oer/oer-on-oer-infrastructure][GitLab]]).
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
