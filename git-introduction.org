@@ -144,7 +144,7 @@
     - [[https://en.wikipedia.org/wiki/Secure_Shell][Secure Shell]]
       (~ssh~): network protocol for remote login with end-to-end
       encryption based on
-      [[file:/OS/Operating-Systems-11-Security.html#asym-intuition][asymmetric cryptography]]
+      [[file:../../OS/Operating-Systems-11-Security.html#asym-intuition][asymmetric cryptography]]
       - Popular [[https://en.wikipedia.org/wiki/Free_and_open-source_software][free]] implementation: [[https://www.openssh.com/][OpenSSH]]
 	- Tool to create key pair: ~ssh-keygen~
     - [[https://docs.gitlab.com/ce/ssh/README.html][Instructions on GitLab]]
