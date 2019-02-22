@@ -5,8 +5,6 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
 #+TITLE: Git Introduction
-#+AUTHOR: Jens Lechtenbörger
-#+REVEAL_ACADEMIC_TITLE: Dr.
 
 * Introduction
 ** Learning Objectives
@@ -406,7 +404,7 @@ git push
    - Documents with lightweight markup are particularly well-suited
      for Git management
 
-** Concluding Questions
+** Concluding Questions                                                :cacs:
    - Merge your answers to the following question into our
      Etherpad or ask them online (Riot or Learnweb)
    - What did you find difficult or confusing about the *contents* of
