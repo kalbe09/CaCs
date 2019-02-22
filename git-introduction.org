@@ -404,7 +404,7 @@ git push
    - Documents with lightweight markup are particularly well-suited
      for Git management
 
-** Concluding Questions                                                :cacs:
+** Concluding Questions
    - Merge your answers to the following question into our
      Etherpad or ask them online (Riot or Learnweb)
    - What did you find difficult or confusing about the *contents* of
