@@ -415,6 +415,8 @@ git push
      creating an issue or pull request in
      [[https://gitlab.com/oer/oer-on-oer-infrastructure][GitLab]]).
 
+#+MACRO: copyrightyears 2018, 2019
+
 # Local Variables:
 # indent-tabs-mode: nil
 # End:
