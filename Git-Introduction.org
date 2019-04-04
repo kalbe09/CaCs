@@ -4,8 +4,6 @@
 # Copyright (C) 2018-2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
-#+TITLE: Git Introduction
-
 * Introduction
 ** Learning Objectives
    - Explain benefits of [[#vcs][version control systems]] (e.g., in the context
@@ -403,19 +401,6 @@ git push
      - Workflows may prescribe use of branches for pull requests
    - Documents with lightweight markup are particularly well-suited
      for Git management
-
-** Concluding Questions
-   - Merge your answers to the following question into our
-     Etherpad or ask them online (Riot or Learnweb)
-   - What did you find difficult or confusing about the *contents* of
-     the presentation?  Please be as specific as possible.  For
-     example, you could describe your current understanding (which
-     might allow us to identify misunderstandings), ask questions that
-     allow us to help you, or suggest improvements (ideally by
-     creating an issue or pull request in
-     [[https://gitlab.com/oer/oer-on-oer-infrastructure][GitLab]]).
-
-#+MACRO: copyrightyears 2018, 2019
 
 # Local Variables:
 # indent-tabs-mode: nil

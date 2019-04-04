@@ -4,8 +4,6 @@
 # Copyright (C) 2018-2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
-#+TITLE: Docker Introduction
-
 * Introduction
 ** Learning Objectives
    - Explain definitions of virtual machine and virtual machine monitor
@@ -222,16 +220,6 @@ COPY manage-packages.el /tmp/
    - Virtual machines and containers
      - can be contrasted in terms of their layering approaches
      - allow to deploy software in well-defined environments
-
-** Concluding Questions
-   - Submit your answer to the following question in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]].
-   - What did you find difficult or confusing about the *contents* of
-     the presentation?  Please be as specific as possible.  For
-     example, you could describe your current understanding (which
-     might allow us to identify misunderstandings), ask questions that
-     allow us to help you, or suggest improvements (ideally by
-     creating an issue or pull request in
-     [[https://gitlab.com/oer/oer-on-oer-infrastructure][GitLab]]).
 
 # Local Variables:
 # indent-tabs-mode: nil
