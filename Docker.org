@@ -46,13 +46,12 @@
      - Network, e.g.,
        [[https://en.wikipedia.org/wiki/Overlay_network][overlay networks]],
        [[https://en.wikipedia.org/wiki/Software-defined_networking][software-defined networking]]
+       - Not our focus
      - Execution environment (e.g., Java, Dotnet)
    - Typical meaning: *virtual machine* (VM)
      - Virtual hardware
        - Several OSs share same underlying hardware
      - VMs isolated from each other
-
-# TODO clarify
 
 ** Definitions
    :PROPERTIES:
@@ -128,9 +127,9 @@
       - Each with full OS, own portion of underlying hardware
 
 ** Review Question
-   - Discuss in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]]
-     which of the [[#virtualization-examples][variants of virtualization]]
-     fulfill which conditions for [[#virtualization-definition][virtualization as defined in 1974]].
+   - The Java VM was mentioned as [[#virtualization-examples][variant of virtualization]].
+     Discuss whether it satisfies the conditions for
+     [[#virtualization-definition][virtualization as defined in 1974]].
 
 * Containerization
 ** Basics
@@ -202,13 +201,12 @@ COPY manage-packages.el /tmp/
 # TODO explain first, beware of Windows!
 
 ** Review Questions
-   - Submit solutions to the following tasks in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]].
-     - Discuss which conditions for
-       [[#virtualization-definition][virtualization as defined in 1974]]
-       are satisfied by Docker.
-     - What did you observe as part of the [[#docker-tutorial][tutorial]]
-       when comparing
-       “the output of ~ps aux~ from your container with the host”?
+   - Discuss which conditions for
+     [[#virtualization-definition][virtualization as defined in 1974]]
+     are satisfied by Docker.
+   - What did you observe as part of the [[#docker-tutorial][tutorial]]
+     when comparing
+     “the output of ~ps aux~ from your container with the host”?
 
 ** Dockerfiles and GitLab
    - In class
