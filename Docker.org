@@ -208,9 +208,6 @@ COPY manage-packages.el /tmp/
      when comparing
      “the output of ~ps aux~ from your container with the host”?
 
-** Dockerfiles and GitLab
-   - In class
-
 * Conclusions
 ** Summary
    - Virtual *virtual machines* are *efficient*, *isolated*
