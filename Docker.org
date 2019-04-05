@@ -42,7 +42,7 @@
    :END:
    - Virtualization: Creation of virtual/abstract version of something
      - Hardware/system: virtual machine (VM)
-     - Virtual memory, recall [[file:../../OS/Operating-Systems-08-Memory-I.org][OS concepts]]
+     - Virtual memory, recall [[https://oer.gitlab.io/OS/Operating-Systems-Memory-I.html][OS concepts]]
      - Network, e.g.,
        [[https://en.wikipedia.org/wiki/Overlay_network][overlay networks]],
        [[https://en.wikipedia.org/wiki/Software-defined_networking][software-defined networking]]
@@ -108,7 +108,7 @@
       physical hardware
       - Most privileged code
 	- Details depend on CPU hardware
-	  - E.g., [[file:../../OS/Operating-Systems-02-Interrupts.org::#kernel-mode][kernel mode]] (CPU ring 0)
+	  - E.g., [[https://oer.gitlab.io/OS/Operating-Systems-Interrupts.html#slide-kernel-mode][kernel mode]] (CPU ring 0)
             or additional “root mode” with more privileges than kernel mode
       - Create abstract versions of hardware, to be used by *guest OSs*
 	- VM = Guest OS running on abstract hardware
@@ -139,7 +139,7 @@
        - (Instead of separate OS per VM)
    - Mechanisms
      - Add container ID to each process, add new
-       access control checks to [[file:../../OS/Operating-Systems-01-Introduction.org::#system-calls][system calls]]
+       access control checks to [[https://oer.gitlab.io/OS/Operating-Systems-Introduction.html#slide-system-calls][system calls]]
      - In case of Linux kernel
        - Kernel [[https://en.wikipedia.org/wiki/Linux_namespaces][namespaces]]
 	 - Limit what is visible inside container
