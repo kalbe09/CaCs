@@ -190,6 +190,13 @@ COPY manage-packages.el /tmp/
 
 * Docker
 
+** Docker Installation
+   - The Community Edition of Docker runs on different OSs
+     - See [[https://docs.docker.com/install/][here for links]]
+
+# TODO test legacy solution [[https://docs.docker.com/toolbox/overview/][Docker Toolbox]]
+# On non-free systems, a good idea?  Is that a VM, within which Docker runs?
+
 ** Docker Tutorial
    :PROPERTIES:
    :CUSTOM_ID: docker-tutorial
