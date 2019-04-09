@@ -165,7 +165,7 @@
        - *Registries* publish images
        - [[https://docs.docker.com/develop/develop-images/dockerfile_best-practices/][Dockerfiles]]
 	 are build recipes for images in simple text format
-     - *Container* is process, created from image (image is template
+     - *Container* is process (set), created from image (image is template
        for container)
    - [[https://kubernetes.io/docs/tutorials/kubernetes-basics/][Kubernetes]]
      {{{reveallicense("./figures/logos/kubernetes.meta","10vh")}}}
