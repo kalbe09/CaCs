@@ -1,7 +1,7 @@
 # Local IspellDict: en
 #+STARTUP: showeverything
 
-# Copyright (C) 2018-2019 Jens Lechtenbörger
+# Copyright (C) 2018, 2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
 * Introduction
@@ -11,7 +11,7 @@
      - Including isolation
      - Including layering
    - Use Docker for simple tasks
-     - E.g., start Web server with static files
+     - E.g., start Web/Solid server with static files
      - Interpret and modify simple docker files
 
 ** Core Questions
@@ -41,13 +41,14 @@
    :CUSTOM_ID: virtualization-examples
    :END:
    - Virtualization: Creation of virtual/abstract version of something
-     - Hardware/system: virtual machine (VM)
      - Virtual memory, recall [[https://oer.gitlab.io/OS/Operating-Systems-Memory-I.html][OS concepts]]
+       - Not our focus
      - Network, e.g.,
        [[https://en.wikipedia.org/wiki/Overlay_network][overlay networks]],
        [[https://en.wikipedia.org/wiki/Software-defined_networking][software-defined networking]]
        - Not our focus
      - Execution environment (e.g., Java, Dotnet)
+     - Hardware/system: virtual machine (VM)
    - Typical meaning: *virtual machine* (VM)
      - Virtual hardware
        - Several OSs share same underlying hardware
@@ -81,6 +82,7 @@
      sharing between VMs)
      - Related to “isolated duplicate” and “complete control” of cite:PG74
    - Sub-types (see cite:SPF+07,FFR+15)
+     #+ATTR_REVEAL: :frag (appear)
      - Resource isolation: Fair allocation and scheduling
        - Reservation (e.g., number of CPU cores and amount of RAM)
 	 vs best-effort
@@ -100,11 +102,12 @@
    :PROPERTIES:
    :CUSTOM_ID: virtualization
    :END:
-   {{{reveallicense("./figures/OS/virtual-machines.meta","60vh")}}}
+   {{{reveallicense("./figures/OS/virtual-machines.meta","60vh",nil,none)}}}
 
 *** Layering Explained
     - Hypervisor or virtual machine manager (VMM) with full access to
       physical hardware
+      #+ATTR_REVEAL: :frag (appear)
       - Most privileged code
 	- Details depend on CPU hardware
 	  - E.g., [[https://oer.gitlab.io/OS/Operating-Systems-Interrupts.html#slide-kernel-mode][kernel mode]] (CPU ring 0)
@@ -113,6 +116,7 @@
 	- VM = Guest OS running on abstract hardware
 	- Host = Environment in which the VMM runs
 	  - Host software may be full OS or specialized
+    #+ATTR_REVEAL: :frag appear
     - Guest OS is *de-privileged*
       - No longer with full hardware access, e.g., CPU ring 1
       - Privileged/sensitive instructions lead to hypervisor
@@ -136,6 +140,7 @@
    - Motivation: Trade isolation for efficiency (see cite:SPF+07)
      - *Main idea* of containerization: *Share kernel* among containers
        - (Instead of separate OS per VM)
+   #+ATTR_REVEAL: :frag appear
    - Mechanisms
      - Add container ID to each process, add new
        access control checks to [[https://oer.gitlab.io/OS/Operating-Systems-Introduction.html#slide-system-calls][system calls]]
@@ -151,7 +156,7 @@
    :PROPERTIES:
    :CUSTOM_ID: containerization
    :END:
-   {{{reveallicense("./figures/OS/containers.meta","60vh")}}}
+   {{{reveallicense("./figures/OS/containers.meta","60vh",nil,none)}}}
 
 ** Selected Technologies
    - [[https://www.docker.com/what-docker][Docker]]
@@ -160,7 +165,7 @@
        - *Registries* publish images
        - [[https://docs.docker.com/develop/develop-images/dockerfile_best-practices/][Dockerfiles]]
 	 are build recipes for images in simple text format
-     - *Container* is an instance of image (image is template
+     - *Container* is process, created from image (image is template
        for container)
    - [[https://kubernetes.io/docs/tutorials/kubernetes-basics/][Kubernetes]]
      {{{reveallicense("./figures/logos/kubernetes.meta","10vh")}}}
@@ -176,8 +181,7 @@
       - Explicitly listing necessary pieces and dependencies
       - Enforcing order and reproducibility
       - [[https://gitlab.com/oer/docker/blob/master/emacs-tex/Dockerfile][Sample dockerfile]]
-        ([[https://gitlab.com/oer/oer-on-oer-infrastructure/blob/master/.gitlab-ci.yml][used]]
-        to generate reveal.js presentations and PDF from org files):
+        (used in the past to generate reveal.js presentations and PDF from org files):
 #+BEGIN_SRC
 FROM ubuntu
 LABEL maintainer="Jens Lechtenbörger"
@@ -187,41 +191,6 @@ RUN apt-get update && apt-get --no-install-recommends install -y \
     texlive-latex-base texlive-latex-extra texlive-latex-recommended
 COPY manage-packages.el /tmp/
 #+END_SRC
-
-* Docker
-
-** Docker Installation
-   - The Community Edition of Docker runs on different OSs
-     - See [[https://docs.docker.com/install/][here for links]]
-
-# TODO test legacy solution [[https://docs.docker.com/toolbox/overview/][Docker Toolbox]]
-# On non-free systems, a good idea?  Is that a VM, within which Docker runs?
-
-** Docker Tutorial
-   :PROPERTIES:
-   :CUSTOM_ID: docker-tutorial
-   :END:
-   - Work through [[https://smancke.github.io/docker-intro/][Docker Intro]]
-     - (Space and Backspace switch slides)
-     - Up to and including the [[https://smancke.github.io/docker-intro/#?slide=17][Exercise on Interaction and debugging]]
-
-# TODO explain first, beware of Windows!
-
-** Review Questions
-   - Discuss which conditions for
-     [[#virtualization-definition][virtualization as defined in 1974]]
-     are satisfied by Docker.
-   - What did you observe as part of the [[#docker-tutorial][tutorial]]
-     when comparing
-     “the output of ~ps aux~ from your container with the host”?
-
-* Conclusions
-** Summary
-   - Virtual *virtual machines* are *efficient*, *isolated*
-     *duplicates* of the real machine
-   - Virtual machines and containers
-     - can be contrasted in terms of their layering approaches
-     - allow to deploy software in well-defined environments
 
 # Local Variables:
 # indent-tabs-mode: nil

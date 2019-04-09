@@ -1,0 +1,26 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2018, 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+# This Tutorial is focused on GNU/Linux users.  Students reported
+# troubles with Windows.
+
+* Docker
+** Docker Tutorial
+   :PROPERTIES:
+   :CUSTOM_ID: docker-tutorial
+   :END:
+   - Work through [[https://smancke.github.io/docker-intro/][Docker Intro]]
+     - (Space and Backspace switch slides)
+     - Up to and including the [[https://smancke.github.io/docker-intro/#?slide=17][Exercise on Interaction and debugging]]
+
+** Review Questions
+   - Submit solutions to the following tasks in [[https://sso.uni-muenster.de/LearnWeb/learnweb2/mod/quiz/view.php?id=1006314][Learnweb]].
+     - Discuss which conditions for
+       [[#virtualization-definition][virtualization as defined in 1974]]
+       are satisfied by Docker.
+     - What did you observe as part of the [[#docker-tutorial][tutorial]]
+       when comparing
+       “the output of ~ps aux~ from your container with the host”?

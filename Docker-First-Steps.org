@@ -1,0 +1,44 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+* Docker
+** Docker Installation
+   - The Community Edition of Docker available for different OSs
+     - See [[https://docs.docker.com/install/][here for links]]
+   - Install on one of your machines, ideally on one that you can bring
+     to (or access in) class
+
+** First Steps
+   - Run ~hello-world~ as instructed in
+     [[https://docs.docker.com/get-started/][Get Started]]
+     - In case of problems, please ask in the forum
+   - List your images and containers
+     - ~docker image ls~
+     - ~docker container ls -all~
+       - Help is available, e.g.:
+	 - ~docker container --help~
+	 - ~docker container ls --help~
+   - Maybe delete image and container
+     - ~docker rmi -f hello-world~
+
+** A Web Server
+   - Run [[https://en.wikipedia.org/wiki/Nginx][nginx]]
+     - ~docker run --name docker-nginx -p 8080:80 nginx~
+       - ~-p~: The Web server listens on port 80 in the container; bind
+	 that to port 8080 on host
+       - Visit [[http://localhost:8080][local server]]
+       - Run ~docker stop/start/logs/rm docker-nginx~
+   - Serve own HTML files
+     - Add option ~-v~
+       - Mount (make available) directory from host in container
+       - ~-v /some/directory/with/html-files:/usr/share/nginx/html~
+
+** Solid Steps
+   - Experiment with Solid in class
+     - Check [[https://github.com/solid/node-solid-server/issues/1167][this issue]]
+     - ~docker run -p 8443:8443 aveltens/solid-server~
+       - Visit [[https://localhost:8443][local server]]
+       - Certificate warnings revisited in upcoming session

@@ -1,0 +1,15 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2018, 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+* Conclusions
+** Summary
+   - Virtual *virtual machines* are *efficient*, *isolated*
+     *duplicates* of the real machine
+   - *Containers* are running processes, defined by *images*
+     - Containers on one host share same OS kernel
+   - Virtual machines and containers
+     - can be contrasted in terms of their layering approaches
+     - allow to deploy software in well-defined environments
