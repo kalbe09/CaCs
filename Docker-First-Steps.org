@@ -6,8 +6,8 @@
 
 * Docker
 ** Docker Installation
-   - The Community Edition of Docker available for different OSs
-     - See [[https://docs.docker.com/install/][here for links]]
+   - Community Edition of Docker available for different OSs
+     - See [[https://docs.docker.com/install/][here for installation links]]
    - Install on one of your machines, ideally on one that you can bring
      to (or access in) class
 
