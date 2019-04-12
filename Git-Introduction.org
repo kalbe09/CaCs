@@ -95,7 +95,7 @@
        - May or may not need to [[https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/][resolve conflicts]]
 
 ** Git explained by Linus Torvalds
-   @@html:<video controls width="400" height="300" src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
+   @@html:<video controls width="400" height="300" data-src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
 
    - [[https://archive.org/details/LinusTorvaldsOnGittechTalk][Video at archive.org]]
      (Tech Talk, 2007, by Google Talks under
