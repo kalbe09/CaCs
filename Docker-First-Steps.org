@@ -12,6 +12,9 @@
      to (or access in) class
 
 ** First Steps
+   :PROPERTIES:
+   :CUSTOM_ID: docker-first-steps
+   :END:
    - Run ~hello-world~ as instructed in
      [[https://docs.docker.com/get-started/][Get Started]]
      - In case of problems, please ask in the forum
@@ -25,6 +28,9 @@
      - ~docker rmi -f hello-world~
 
 ** A Web Server
+   :PROPERTIES:
+   :CUSTOM_ID: docker-nginx
+   :END:
    - Run [[https://en.wikipedia.org/wiki/Nginx][nginx]]
      - ~docker run --name my-nginx -p 8080:80 nginx~
        - ~-p~: Web server listens on port 80 in container; bind
@@ -43,6 +49,9 @@
            in particular ~index.html~
 
 ** Solid Steps
+   :PROPERTIES:
+   :CUSTOM_ID: docker-solid
+   :END:
    - Experiment with Solid in class
      - Check [[https://github.com/solid/node-solid-server/issues/1167][this issue]]
      - ~docker run -p 8443:8443 aveltens/solid-server~
