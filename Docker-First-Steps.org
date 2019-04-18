@@ -36,6 +36,8 @@
        - ~-p~: Web server listens on port 80 in container; bind
 	 to port 8080 on host
 	 - Visit [[http://localhost:8080][local server]]
+           (see [[#docker-toolbox][next slide]] for Docker Toolbox
+           under Windows)
        - ~--name my-nginx~: Assign name to container for subsequent use
 	 - E.g., ~docker stop/start/logs/rm my-nginx~
 	 - Note: *Error* if you execute ~docker run --name ...~
@@ -47,6 +49,23 @@
 	 - E.g.: ~-v /host-directory/with/html-files:/usr/share/nginx/html~
 	 - ~/usr/share/nginx/html~ is where nginx expects HTML files,
            in particular ~index.html~
+
+*** Docker Toolbox under Windows
+    :PROPERTIES:
+    :CUSTOM_ID: docker-toolbox
+    :END:
+    - (I do not recommend this in any way.
+      [[https://www.getgnulinux.org/en/switch_to_linux/][Switch to GNU/Linux.]])
+    - Docker Toolbox installs a virtual machine, in which Docker runs
+      - Initial output informs about
+	- IP address of VM, e.g., ~192.168.99.100~
+	  - Visit [[http://192.168.99.100:8080][port 8080 on 192.168.99.100]]
+	- File system path
+	  - ~/c/Program Files/Docker Toolbox~
+      - Paths under ~C:\Users~ can be mounted by default
+	- E.g., ~docker run -p 8080:80 -v
+          /c/Users/<your-name>/<folder-with-index.html>:/usr/share/nginx/html nginx~
+	  - [[https://stackoverflow.com/questions/33312662/docker-toolbox-mount-file-on-windows][Maybe you need double slashes]]
 
 ** Solid Steps
    :PROPERTIES:
