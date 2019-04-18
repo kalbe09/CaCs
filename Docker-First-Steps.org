@@ -26,15 +26,21 @@
 
 ** A Web Server
    - Run [[https://en.wikipedia.org/wiki/Nginx][nginx]]
-     - ~docker run --name docker-nginx -p 8080:80 nginx~
-       - ~-p~: The Web server listens on port 80 in the container; bind
-	 that to port 8080 on host
-       - Visit [[http://localhost:8080][local server]]
-       - Run ~docker stop/start/logs/rm docker-nginx~
+     - ~docker run --name my-nginx -p 8080:80 nginx~
+       - ~-p~: Web server listens on port 80 in container; bind
+	 to port 8080 on host
+	 - Visit [[http://localhost:8080][local server]]
+       - ~--name my-nginx~: Assign name to container for subsequent use
+	 - E.g., ~docker stop/start/logs/rm my-nginx~
+	 - Note: *Error* if you execute ~docker run --name ...~
+           again; name ~my-nginx~ is taken
+	 - Instead: ~docker start my-nginx~
    - Serve own HTML files
-     - Add option ~-v~
+     - Add option ~-v~ to above ~docker run ...~
        - Mount (make available) directory from host in container
-       - ~-v /some/directory/with/html-files:/usr/share/nginx/html~
+	 - E.g.: ~-v /host-directory/with/html-files:/usr/share/nginx/html~
+	 - ~/usr/share/nginx/html~ is where nginx expects HTML files,
+           in particular ~index.html~
 
 ** Solid Steps
    - Experiment with Solid in class
