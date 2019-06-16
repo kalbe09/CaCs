@@ -125,7 +125,7 @@
 
 ** Git with Remote Repositories
    - *Download* files from public repository: ~clone~
-     - ~git clone https://gitlab.com/oer/oer-on-oer-infrastructure.git~
+     - ~git clone https://gitlab.com/oer/cs/programming.git~
        - Later on, ~git pull~ merges changes to bring your copy up to date
    - *Contribute* to remote repository
      - Create account first
@@ -159,8 +159,8 @@
        [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][First time Git setup]]
    - Part 0
      - Create repository or clone one
-       - ~git clone https://gitlab.com/oer/oer-on-oer-infrastructure.git~
-       - Creates directory ~oer-on-oer-infrastructure~
+       - ~git clone https://gitlab.com/oer/cs/programming.git~
+       - Creates directory ~programming~
          - Change into that directory
          - Note presence of sub-directory ~.git~ (with Git meta-data)
 
@@ -168,11 +168,11 @@
     - Execute ~git status~
       - Output includes current branch (~master~) and potential changes
     - Open some file in text editor and improve it
-      - E.g., add something to ~Git-introduction.org~
+      - E.g., add something to ~Git-Introduction.org~
     - Create a new file, say, ~test.txt~
     - Execute ~git status~ again
       - Output indicates
-        - ~Git-introduction.org~ as *not staged* and *modified*
+        - ~Git-Introduction.org~ as *not staged* and *modified*
         - ~test.txt~ as *untracked*
         - Also, follow-up commands are suggested
           - ~git add~ to stage for commit
@@ -181,13 +181,13 @@
 *** Part 2: Staging Changes
     - Changes need to be ~staged~ before commit
       - ~git add~ is used for that purpose
-      - Execute ~git add Git-introduction.org~
+      - Execute ~git add Git-Introduction.org~
       - Execute ~git status~
-        - Output indicates ~Git-introduction.org~ as *to be committed*
+        - Output indicates ~Git-Introduction.org~ as *to be committed*
           and *modified*
-    - Modify ~Git-introduction.org~ more
+    - Modify ~Git-Introduction.org~ more
     - Execute ~git status~
-      - Output indicates ~Git-introduction.org~ as
+      - Output indicates ~Git-Introduction.org~ as
         - *To be committed* and *modified*
           - Those are your changes added in Part 1
         - As well as *not staged* and *modified*
@@ -200,7 +200,7 @@
     - Execute ~git diff --cached~
       - Output shows changes from last committed version
         - All your changes
-    - Execute ~git add Git-introduction.org~
+    - Execute ~git add Git-Introduction.org~
     - Execute both ~diff~ variants again
       - Lots of other variants exits
         - Execute ~git help diff~
@@ -212,7 +212,7 @@
         - Where ~<what was improved>~ should be meaningful text
         - [[https://chris.beams.io/posts/git-commit/][50 characters or less]]
     - Execute ~git status~
-      - Output no longer mentions ~Git-introduction.org~
+      - Output no longer mentions ~Git-Introduction.org~
         - Up to date from Git’s perspective
       - Output indicates that your branch advanced; ~git push~
         suggested for follow-up
@@ -228,8 +228,8 @@
         - Note that state before commit is restored
         - May applied more changes, commit later
     - Undo ~git add~ with ~git reset~
-      - Execute ~git add Git-introduction.org~
-      - Execute ~git reset Git-introduction.org~
+      - Execute ~git add Git-Introduction.org~
+      - Execute ~git reset Git-Introduction.org~
     - Restore committed version
       - Execute ~git checkout -- <file>~
       - *Warning*: Local changes are *lost*
@@ -388,7 +388,7 @@ git push
 ** Org Mode
    - [[https://orgmode.org/][Org mode]]: Another lightweight markup language
      - My favorite one
-   - For details see [[https://gitlab.com/oer/oer-on-oer-infrastructure/blob/master/Git-introduction.org][source file for this presentation as example]]
+   - For details see [[https://gitlab.com/oer/cs/programming/blob/master/Git-Introduction.org][source file for this presentation as example]]
 
 * Conclusions
 ** Summary
