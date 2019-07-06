@@ -369,7 +369,7 @@ git push
          [[https://en.wikipedia.org/wiki/Merge_(version_control)#Three-way_merge][three-way merge]]
        - Conversion to target language (e.g. (X)HTML, PDF, EPUB, ODF)
          - Wikis, blogs
-         - [[http://pandoc.org/][pandoc]] can convert between lots of languages
+         - [[https://pandoc.org/][pandoc]] can convert between lots of languages
 
 ** Markdown
    :PROPERTIES:
