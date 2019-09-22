@@ -4,6 +4,8 @@
 # Copyright (C) 2018-2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+#+KEYWORDS: git, decentralization, version, version control system, source code management, fork, clone, merge, commit, branch, git workflow, lightweight markup language
+
 * Introduction
 ** Learning Objectives
    - Explain benefits of [[#vcs][version control systems]] (e.g., in the context

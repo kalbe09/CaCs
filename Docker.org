@@ -4,6 +4,8 @@
 # Copyright (C) 2018, 2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+#+KEYWORDS: docker, image, containerization, container, virtualization, virtual machine, isolation
+
 * Introduction
 ** Learning Objectives
    - Explain definitions of virtual machine and virtual machine monitor
