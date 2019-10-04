@@ -37,6 +37,7 @@
    #+end_src
 
 ** Naive Exponentiation
+   TODO: Not working, previous function definition unknown
    #+begin_src python
      def naive_exp(op1, op2):
          if op2 < 0:
