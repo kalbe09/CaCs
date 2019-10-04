@@ -6,8 +6,6 @@
 
 #+KEYWORDS: big o notation, complexity, example,
 
-#+OPTIONS: ^:{}
-
 * Sample Algorithms
   - Determine the [[https://en.wikipedia.org/wiki/Big_O_notation][Big O complexity]]
     for the following algorithms!
@@ -37,13 +35,17 @@
    #+end_src
 
 ** Naive Exponentiation
-   TODO: Not working, previous function definition unknown
    #+begin_src python
+     def naive_mult(op1, op2):
+         if op2 == 0: return 0
+         result = op1
+         while op2 > 1:
+             result += op1
+             op2 -= 1
+         return result
+
      def naive_exp(op1, op2):
-         if op2 < 0:
-             print("Not supported")
-             return 42
-         elif op2 == 0: return 1
+         if op2 == 0: return 1
          result = op1
          while op2 > 1:
              result = naive_mult(result, op1)
