@@ -15,8 +15,8 @@
     - This presentation embeds
       [[https://github.com/viebel/klipse][klipse]], to enable live
       code execution.
-      - Thus, click into the, edit it, and have results immediately displayed.
-    - To determine Big O complexity, focus on the number of plus operations
+      - Thus, click into code, edit it, and have results immediately displayed.
+    - To determine Big O complexity, focus on the number of plus operations.
       - Maybe introduce a new variable to count plus operations;
         output the final number.  What patterns emerge?
 
