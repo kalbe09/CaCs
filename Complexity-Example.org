@@ -1,0 +1,57 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+KEYWORDS: big o notation, complexity, example,
+
+#+OPTIONS: ^:{}
+
+* Sample Algorithms
+  - Determine the [[https://en.wikipedia.org/wiki/Big_O_notation][Big O complexity]]
+    for the following algorithms!
+  - Hints
+    - This presentation embeds
+      [[https://github.com/viebel/klipse][klipse]], to enable live
+      code execution.
+      - Thus, click into the, edit it, and have results immediately displayed.
+    - To determine Big O complexity, focus on the number of plus operations
+      - Maybe introduce a new variable to count plus operations;
+        output the final number.  What patterns emerge?
+
+** Naive Multiplication
+   #+begin_src python
+     def naive_mult(op1, op2):
+         if op2 < 0:
+             print("Not supported")
+             return 42
+         if op2 == 0:
+             return 0
+         result = op1
+         while op2 > 1:
+             result += op1
+             op2 -= 1
+         return result
+
+     naive_mult(2, 3)
+   #+end_src
+
+** Naive Exponentiation
+   #+begin_src python
+     def naive_exp(op1, op2):
+         if op2 < 0:
+             print("Not supported")
+             return 42
+         elif op2 == 0:
+             return 1
+         result = op1
+         while op2 > 1:
+             result = naive_mult(result, op1)
+             op2 -= 1
+         return result
+
+     naive_exp(2, 3)
+   #+end_src
+
+   What if ~naive_mult(op1, result)~ instead of ~naive_mult(result, op1)~?

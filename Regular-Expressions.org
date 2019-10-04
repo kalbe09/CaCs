@@ -1,0 +1,464 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+# Copyright (C) 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+OPTIONS: ^:{} ':t
+#+KEYWORDS: regular expression, regexp, regular language, pattern matching, symbol, word, alphabet, language,
+
+# Show regular expressions in blue.
+#+MACRO: RegExp [[color:darkblue][$1]]
+# Show words in green.
+#+MACRO: WW [[color:darkgreen][$1]]
+
+* Introduction
+  :PROPERTIES:
+  :reveal_extra_attr: data-audio-src="./audio/regexp-01.ogg"
+  :END:
+  #+begin_notes
+Welcome to a short tour of regular expressions.
+
+Regular expressions fall into the wider topic of formal languages.
+
+If you know the Chomsky hierarchy of formal languages or if you know how compilers for programming languages work, not much of the following may be new to you.
+
+In any case, this introduction is meant to be self-contained, so not much prior knowledge should be necessary.
+  #+end_notes
+
+** Regular Expressions
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-02a.ogg"
+   :END:
+   - Regular expressions ({{{RegExp(regexps)}}}) are formalism to define languages
+     (permissible strings/words)
+   #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-02b.ogg
+   - Sample {{{RegExp(regexps)}}} use cases
+     - *Validate* whether string conforms to format/pattern
+       - Special case: *Define* tokens in programming languages
+     - *Find* strings of specific *pattern* in text
+     - *Replace* strings of specific *pattern* in text
+     - *Split/elementize* strings
+   #+begin_notes
+Regular expressions are a formalism to define formal languages.
+
+For our purposes it is sufficient to understand a formal language as a set of strings.
+
+So, some strings are part of a given language while others are not.
+
+The notion of string here should be interpreted quite broadly.
+
+For example, a string may or may not represent a syntactically valid program in the language Java.
+
+The purpose of regular expressions is narrower, though.
+
+Instead of entire programs, here the focus is on individual parts, sometimes called tokens.
+
+For example, we can use regular expressions to define the set of valid variable names in a programming language or the set of valid telephone numbers in a data integration setting.
+
+Further use cases are shown on the slide here.
+   #+end_notes
+
+** Regular Expression as Tool
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-03.ogg"
+   :END:
+   - Versatile tool
+     - In most programming languages
+     - In reasonable text editors
+     - In UNIX command line tools, e.g., ~grep~, ~sed~
+     - In data profiling tools (patterns for phone numbers, e-mail
+       addresses, URIs, ...)
+     - In data integration tools (matching of various formats to
+       standardized representation)
+   #+begin_notes
+In computing, regular expressions are widely spread.
+
+Functionality for search and replace based on regular expressions exists in most programming languages, in better text editors, and in special-purpose tools.
+
+In our class context, you find regular expressions in data profiling and data integration tools, which is why you may want to learn more about them.
+   #+end_notes
+
+** Regexp Facts
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-04.ogg"
+   :END:
+   - {{{RegExp(Regexp)}}} matching can be implemented via
+     finite-state automata (mostly *efficiently*)
+     - Regular expressions and (deterministic or non-deterministic)
+       finite state automata specify precisely the same languages, namely
+       the *regular languages*
+   - There is no {{{RegExp(regexp)}}} to match correctly nested
+     (arbitrarily deeply) parenthesized expressions
+     - (E.g., “(1 + (2 * ((3 * ...)...)...)...)”)
+     - Reason: finite memory!
+     - Regular languages vs context-free languages,
+       [[https://en.wikipedia.org/wiki/Chomsky_hierarchy][Chomsky hierarchy]]
+   #+begin_notes
+This slides mentions two facts about regular expressions, for which actually formal proofs exist.
+
+First, every regular expression can be implemented via a finite-state automaton, which is a particular machine model for computation where only a finite amount of memory is available.
+
+Second, the expressive power of regular expressions is limited as far as formal languages are concerned.
+
+A famous example of a language that cannot be defined via a regular expression is that of properly nested parentheses.
+
+Different classes of languages can be arranged in the so-called Chomsky hierarchy, about which you can learn more at Wikipedia or in textbooks on theoretical computer science or on compiler construction.
+
+Those classes of languages include regular languages, defined by regular expressions, context-free languages, which include parenthesized expressions and are fundamental in the definition of programming languages, and more.
+   #+end_notes
+
+* Background
+** Alphabets, Words, and Languages
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-05a.ogg"
+   :END:
+   - *Alphabet* = finite set of symbols, e.g.:
+     - Latin characters
+     - Digits
+     - ASCII, UTF-8
+     - Keyboard alphabet
+   #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-05b.ogg
+   - *Word* (over alphabet A) = String (over alphabet A) = finite sequence
+     of symbols (over alphabet A)
+     - \epsilon{} denotes the *empty* word (no symbols)
+   #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-05c.ogg
+   - *Language* (over alphabet A) = set of words (over alphabet A)
+   #+begin_notes
+To define a formal language, we start from an alphabet, which is just a finite set of symbols.
+
+Typical examples of alphabets are shown here.
+
+Given an alphabet, a word is a finite sequence of symbols.
+
+The empty sequence or word is usually represented with epsilon.
+
+This notion of word is somewhat counter-intuitive as a Java program can be perceived as a single word (while is consists of words at the same time).
+
+Given an alphabet, a language is a set of words, for example the set of syntactically correct Java programs or the set of valid telephone numbers.
+   #+end_notes
+
+** Operations on Words
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-06a.ogg"
+   :END:
+   - If v and w are words, then *vw* is a word, the *concatenation* of
+     v and w
+     - E.g., v = {{{WW(data)}}}, w = {{{WW(integration)}}}.
+       Then vw = {{{WW(dataintegration)}}}
+     #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-06b.ogg
+     - {{{WW(\epsilon{})}}} is the neutral element w.r.t. concatenation, i.e.,
+       {{{WW(\epsilon{}w)}}} = {{{WW(w\epsilon{})}}} = {{{WW(w)}}}
+       for all words {{{WW(w)}}}
+   #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-06c.ogg
+   - If w is a word and k a non-negative integer then the *power w^{k}* is
+     defined as follows:
+     - w^{0} = \epsilon{}
+     - w^{k} = w^{k-1}w for k > 0
+   #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-06d.ogg
+   - E.g.;
+     - {{{WW(data)}}}^{1} = {{{WW(data)}}}^{0}{{{WW(data)}}} = {{{WW(\epsilon{}data)}}} = {{{WW(data)}}}
+     - {{{WW(data)}}}^{2} = {{{WW(data)}}}^{1}{{{WW(data)}}} = {{{WW(datadata)}}}
+   #+begin_notes
+A typical operation on words is the concatenation, which just means writing words one after the other, without any intermediate symbol.
+
+By definition, concatenating a word *w* with the empty word, epsilon, does not change *w*.
+
+Repeated concatenation is represented with powers and defined recursively as shown here.
+
+Raising to the power zero always results in epsilon, while for a word *w* the result of *w* to the *k* is defined as *w* to the *k* minus one, concatenated with *w*.
+
+Examples for that definition are shown here.
+   #+end_notes
+
+*** Quiz on Words
+#+REVEAL_HTML: <script data-quiz="quizWords" src="./quizzes/words.js"></script>
+
+** Operations on Languages
+*** Let L and M be languages
+    :PROPERTIES:
+    :reveal_extra_attr: data-audio-src="./audio/regexp-07a.ogg"
+    :END:
+    - L \cup M is usual *set union*
+    #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-07b.ogg
+    - LM = { vw | v \in L and w \in M } (*concatenation*)
+    #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-07c.ogg
+    - L^{*} = L^{0} \cup L^{1} \cup L^{2} \cup L^{3} \cup ... (*Kleene star/closure*)
+      - Where L^{0} = { \epsilon{} } and L^{k+1} = L^{k}L (k \geq 0)
+      - Zero or more concatenations of L with itself
+    #+ATTR_REVEAL: :frag appear :audio ./audio/regexp-07d.ogg
+    - L^{+} = L^{1} \cup L^{2} \cup L^{3} \cup ... (*positive closure*)
+      - One or more concatenations of L with itself
+    #+begin_notes
+For the definition of regular expressions, we need certain operations on languages.
+
+First, as languages are sets of words, we can compute their set union.
+
+Second, the concatenation of two languages results in the set of words that arise from concatenations of pairs of words from the original languages.
+
+Third, the so-called Kleene star, denoted by L star, represents zero or more concatenations of some language.
+
+Finally, L plus denotes one or more concatenations of L.
+    #+end_notes
+
+*** Language Operation Examples
+    :PROPERTIES:
+    :reveal_extra_attr: data-audio-src="./audio/regexp-08.ogg"
+    :END:
+  -  L_{1} = { \epsilon{}, ab, abb }, L_{2} = { b, ba }
+  -  L_{1} L_{2} = ?
+  -  L_{2} L_{1} = ?
+  -  L_{1}^{3} = ?
+  -  L_{2}^{3} = ?
+  #+begin_notes
+This slide shows two languages and asks you to apply some operations.
+  #+end_notes
+
+*** Quiz on Language Operations
+#+REVEAL_HTML: <script data-quiz="quizLanguages" src="./quizzes/languages.js"></script>
+
+* Regular Expressions
+** Regexp Definition
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-09a.ogg"
+   :END:
+   - {{{RegExp(Regexps)}}} and their languages (over alphabet A)
+     *defined recursively* as follows
+     #+ATTR_REVEAL: :frag (appear) :audio (./audio/regexp-09b.ogg ./audio/regexp-09c.ogg ./audio/regexp-09d.ogg)
+     1. {{{RegExp(\epsilon{})}}} is a regexp with L({{{RegExp(\epsilon{})}}}) = {{{{WW(\epsilon{})}}}}
+     2. {{{RegExp(a)}}} is a regexp with
+        L({{{RegExp(a)}}}) = {{{{RegExp(a)}}}} for every symbol {{{RegExp(a)}}} \in A
+     3. Let {{{RegExp(r)}}} and {{{RegExp(s)}}} be regexps with languages L({{{RegExp(r)}}}) and L({{{RegExp(s)}}}).
+        #+ATTR_REVEAL: :frag (appear) :audio (./audio/regexp-09e.ogg ./audio/regexp-09f.ogg ./audio/regexp-09g.ogg ./audio/regexp-09h.ogg)
+        - {{{RegExp((r)|(s))}}} is a regexp with
+          L({{{RegExp((r)|(s))}}}) = L({{{RegExp(r)}}})
+          \cup L({{{RegExp(s)}}})
+          - Alternative
+        - {{{RegExp((r)(s))}}} is a regexp with
+          L({{{RegExp((r)(s))}}})
+          = L({{{RegExp(r)}}}) L({{{RegExp(s)}}})
+          - Concatenation
+        - {{{RegExp((r)^{*})}}} is a regexp with L({{{RegExp((r)^{*})}}}) = (L({{{RegExp(r)}}}))^{*}
+          - Kleene star
+        - {{{RegExp((r))}}} is a regexp with L({{{RegExp((r))}}}) = L({{{RegExp(r)}}})
+   #+begin_notes
+We are now ready to define regular expressions, which in turn define languages.
+
+The empty word is a regular expression, whose language contains nothing but the empty word.
+
+Also, each individual symbol is a regular expression, whose language contains nothing but the symbol as a word.
+
+Recursively, four rules allow to construct more complex regular expressions from given regular expressions.
+
+First, the vertical bar denotes an alternative, so the resulting language is the union of the original languages.
+
+Second, the concatenation of regular expressions is again a regular expression, whose language is the concatenation of the original languages.
+
+Third, the Kleene star can be applied to a regular expression, which results in the language obtained by applying the Kleene star to the original language.
+
+Fourth, parentheses can be applied without changing the defined language.
+   #+end_notes
+
+** Parentheses
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-10.ogg"
+   :END:
+   - By definition, {{{RegExp(regexps)}}} contain many parentheses
+   - Reduction of amount of parentheses via precedence rules for operators
+     - Kleene star > Concatenation > Alternative
+     - E.g.: {{{RegExp(((a)(a))|(((a)(b))^{*}(c)))}}} = {{{RegExp(aa|(ab)^{*}c)}}}
+   #+begin_notes
+Here you see typical conventions to avoid parentheses based on precedence rules.
+   #+end_notes
+
+** Regexp Matching
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-11.ogg"
+   :END:
+   - {{{RegExp(Regexp E)}}} *matches* {{{WW(word w)}}} if {{{WW(w)}}} \in L({{{RegExp(E)}}})
+   - E_{1} = {{{RegExp(data)}}}
+     - L(E_{1}) = { {{{WW(data)}}} }
+     - E_{1} matches {{{WW(data)}}} (but not {{{WW(integration)}}})
+   - E_{2} = {{{RegExp((data)|(integration))}}} = {{{RegExp(data|integration)}}}
+     - L(E_{2}) = { {{{WW(data)}}}, {{{WW(integration)}}} }
+     - E_{2} matches {{{WW(data)}}} and
+       {{{WW(integration)}}} (but not
+       {{{WW(dataintegration)}}})
+   - E_{3} = (E_{2})*
+     - L(E_{3}) = ?
+   #+begin_notes
+A regular expression can be understood as pattern, which is matched against strings.
+
+Precisely, a word matches regular expression E if the word is an element of the language defined by E.
+
+You see two examples here and are instructed to think about a third one.
+   #+end_notes
+
+*** Quiz on RegExp Language
+#+REVEAL_HTML: <script data-quiz="quizRegularLanguage" src="./quizzes/regular-language.js"></script>
+
+** Major Regexp Shorthands
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-12.ogg"
+   :END:
+   - E regular expression, n < m integers
+     - {{{RegExp(E+)}}} = {{{RegExp(EE*)}}} (at least one E)
+     - {{{RegExp(E?)}}} = {{{RegExp(E|\epsilon{})}}} (E is optional)
+     - {{{RegExp(E{n\,m})}}} = {{{RegExp(E^{n}|E^{n+1}|...|E^{m})}}} (n to m repetitions of E)
+   - Alphabet A = { a1, a2, ..., an }
+     - {{{RegExp(.)}}} = {{{RegExp((a1|a2|...|an))}}} (dots
+       represents any symbol of A)
+     - {{{RegExp({{{BO}}}a_{i1}a_{i2}...a_{ik}{{{BC}}})}}} =
+       {{{RegExp((a_{i1}|a_{i2}|...|a_{ik}))}}} (set of symbols)
+     - {{{RegExp({{{BO}}}^a_{i1}a_{i2}...a_{ik}{{{BC}}})}}}
+       (complemented set; all symbols except { a_{i1}, a_{i2}, ..., a_{ik} })
+   - In practice, symbols of alphabets are ordered (e.g., a < c < z;
+     1 < 9)
+     - a', a'' \in A, a' < a''.
+       Then {{{RegExp({{{BO}}}a'-a''{{{BC}}})}}} = {{{RegExp(a'|...|a'')}}} (range of
+       symbols)
+       - {{{RegExp({{{BO}}}0-9{{{BC}}})}}} = {{{RegExp(0|1|2|3|4|5|6|7|8|9)}}}
+   #+begin_notes
+Various implementations of regular expressions offer abbreviations, some of which are listed here.
+   #+end_notes
+
+* The Real World
+** Regexps in Practice
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-13.ogg"
+   :END:
+   - Various standards
+     - See [[https://en.wikipedia.org/wiki/Regular_expression#Standards]]
+     - In particular, PCRE (Perl Compatible Regular Expressions)
+       - Used in many tools and programming languages
+       - All of the above: Concatenation, alternative (|), closure (*),
+         positive closure (+), optional (?), sets ([...]), repetition
+         ({n,m})
+       - And more: Matching at beginning/end of word/line (^ and $),
+         character classes (predefined expressions for words, numbers,
+         whitespace, ...), look-ahead, look-behind, grouping and
+         backreference (parentheses and numbers) ...
+     - E.g.:
+       - {{{RegExp(data)}}} matches {{{WW(data integration)}}} and {{{WW(MIS and data warehousing)}}}
+       - {{{RegExp(^data)}}} matches {{{WW(data integration)}}}
+         but not {{{WW(MIS and data warehousing)}}}
+       - {{{RegExp(data$)}}} matches neither
+       - {{{RegExp(\textbackslash{}d)}}} matches single digit, which is
+         {{{RegExp({{{BO}}}0-9{{{BC}}})}}}, which is
+         {{{RegExp((0|1|...|9))}}}
+       - {{{RegExp({{{BO}}}1-9{{{BC}}}\textbackslash{}d*)}}} matches positive
+         integers without leading zeros
+       - {{{RegExp({{{BO}}}hc{{{BC}}}?at)}}} matches {{{WW(hat)}}}, {{{WW(cat)}}}, and {{{WW(at)}}}.
+   #+begin_notes
+Different implementations provide different shorthands, some of which are recognized as standards.
+
+Here, you see initial pointers.
+
+You may want to try out the given examples, for which the next slide contains suggestions.
+   #+end_notes
+
+** Learning Regexps
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-14.ogg"
+   :END:
+   - Lots of free software tools to build {{{RegExp(regexps)}}} and verify their effects
+   - Some examples
+     - [[https://regexr.com/]]
+     - ~M-x regexp-builder~ in [[https://www.gnu.org/software/emacs/][GNU Emacs]]
+     - Next slide in Python
+       - *Live* code execution, *editable*
+         - Based on in-browser Python implementation, not complete
+     - Try out [[http://jupyter.org/][Jupyter]] notebooks (or [[https://github.com/millejoh/emacs-ipython-notebook][Emacs IPython Notebook]])
+       - Web application for documents with live code, visualizations,
+         documentation
+         - Support for lots of languages
+         - Conversations *with* and *about* data
+   #+begin_notes
+Different resources are available to learn more about regular expressions.
+
+I recommend that you try out some patterns in tools of your choice.
+   #+end_notes
+
+*** Regexps in Python
+    :PROPERTIES:
+    :reveal_extra_attr: data-audio-src="./audio/regexp-klipse.ogg"
+    :END:
+    #+begin_src python
+import re # See https://docs.python.org/3/library/re.html
+m1 = re.search("^Data", "Data Integration")
+print("Match: '{}'".format(m1.group(0))) # Group 0 is entire match
+m2 = re.search("^Data", "MIS and Data Warehousing")
+if m2 is None:
+    print("No match.")
+    #+end_src
+    #+begin_notes
+    This Python code searches for the pattern “Data”, but only at the
+    beginning of strings as the regular expression start with the hat
+    symbol.
+
+    Note that this presentation embeds a software called
+    [[https://github.com/viebel/klipse][klipse]], to enable live code
+    execution.  Thus, you can click into the code, edit it, and
+    have results immediately displayed in the output section.
+    #+end_notes
+# TODO Record audio
+
+** Regexp Example: E-Mail
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-15.ogg"
+   :END:
+   - See [[https://www.regular-expressions.info/email.html]]
+   - =^[A-Z0-9.\_%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$=
+     - To be used with case-insensitive matching
+   - Design decisions
+     - Match most real addresses but not all
+       - Only ASCII allowed here
+     - Also allow some invalid strings
+       - Multiple subsequent dots are allowed
+     - Don't care about domain names
+       - Could explicitly specify alternatives for top-level domains
+         (TLDs), e.g., ~.museum~ missing but ~.asfg~ allowed
+   #+begin_notes
+Here you see a sample regular expression to match e-mail addresses, for variants of which you find discussions on the mentioned web page.
+
+I suggest that you think about the regular expression and read the web page.
+   #+end_notes
+
+** Patterns with Regexps
+   :PROPERTIES:
+   :reveal_extra_attr: data-audio-src="./audio/regexp-16.ogg"
+   :END:
+   - {{{RegExp(Regexp)}}} for telephone numbers?
+     - One expression matching both examples:
+       - *+49-251-83-38150*
+       - *+49 251 83 38151*
+   - Different {{{RegExp(regexp)}}} for alternative format?
+     - *(0251) (83) 38158*
+   #+begin_notes
+Please think about regular expressions for telephone numbers.
+
+Sometimes different parts are separated by spaces, sometimes by
+hyphens, sometimes by parentheses.
+
+I suggest that you construct regular expressions for the examples
+shown here, which we will revisit in class.  Also, discuss the
+matching accuracy similarly to the discussion for e-mail addresses
+mentioned on the previous slides.
+
+Note that the plus sign as well as parentheses have a special meaning,
+which implies that you need to escape them.  Please figure out how to
+do so on your own.
+   #+end_notes
+
+* Learning Objectives
+  - Explain what {{{RegExp(regexps)}}} are and where they are useful
+  - Give examples for what {{{RegExp(regexps)}}} can and cannot do
+    - In general
+    - Matching accuracy
+  - Read and write {{{RegExp(regexps)}}} for sample use cases
+    - Enumerate their languages
+
+# The following prevents replacement of 8 spaces with tabs,
+# which would destroy indentation for Python.
+# Local Variables:
+# org-src-preserve-indentation: t
+# End:
