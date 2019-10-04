@@ -34,7 +34,7 @@
              op2 -= 1
          return result
 
-     naive_mult(2, 3)
+     print(naive_mult(2, 3))
    #+end_src
 
 ** Naive Exponentiation
@@ -51,7 +51,7 @@
              op2 -= 1
          return result
 
-     naive_exp(2, 3)
+     print(naive_exp(2, 3))
    #+end_src
 
    What if ~naive_mult(op1, result)~ instead of ~naive_mult(result, op1)~?
