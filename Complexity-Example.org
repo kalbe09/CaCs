@@ -26,8 +26,7 @@
          if op2 < 0:
              print("Not supported")
              return 42
-         if op2 == 0:
-             return 0
+         if op2 == 0: return 0
          result = op1
          while op2 > 1:
              result += op1
@@ -43,8 +42,7 @@
          if op2 < 0:
              print("Not supported")
              return 42
-         elif op2 == 0:
-             return 1
+         elif op2 == 0: return 1
          result = op1
          while op2 > 1:
              result = naive_mult(result, op1)
@@ -54,4 +52,5 @@
      print(naive_exp(2, 3))
    #+end_src
 
+   #+ATTR_HTML: :class smaller
    What if ~naive_mult(op1, result)~ instead of ~naive_mult(result, op1)~?
