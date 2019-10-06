@@ -58,5 +58,9 @@
      print(naive_exp(2, 3))
    #+end_src
 
-   #+ATTR_HTML: :class smaller
-   What if ~naive_mult(op1, result)~ instead of ~naive_mult(result, op1)~?
+*** A “Small” Change
+    - What happens if the order of arguments to ~naive_mult~ on the
+      previous slide is reversed, i.e., if ~naive_mult(op1, result)~
+      instead of ~naive_mult(result, op1)~ is executed?
+      - Clearly, as multiplication is commutative, the result does not change.
+      - What about the resulting complexity?
