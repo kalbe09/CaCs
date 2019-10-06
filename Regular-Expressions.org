@@ -366,7 +366,7 @@ You may want to try out the given examples, for which the next slide contains su
      - ~M-x regexp-builder~ in [[https://www.gnu.org/software/emacs/][GNU Emacs]]
      - Next slide in Python
        - *Live* code execution, *editable*
-         - Based on in-browser Python implementation, not complete
+         - Based on in-browser Python implementation ([[http://skulpt.org/][skulpt]]), not complete
      - Try out [[http://jupyter.org/][Jupyter]] notebooks (or [[https://github.com/millejoh/emacs-ipython-notebook][Emacs IPython Notebook]])
        - Web application for documents with live code, visualizations,
          documentation
