@@ -8,12 +8,15 @@
 
 * Sample Algorithms
   - Determine the [[https://en.wikipedia.org/wiki/Big_O_notation][Big O complexity]]
-    for the following algorithms!
+    for the following algorithms in Python!
   - Hints
     - This presentation embeds
       [[https://github.com/viebel/klipse][klipse]], to enable live
       code execution.
-      - Thus, click into code, edit it, and have results immediately displayed.
+      - Thus, click into code, edit it, and have results immediately
+        displayed.
+        - Based on in-browser implementation of Python
+          ([[http://skulpt.org/][skulpt]]), not complete.
     - To determine Big O complexity, focus on the number of plus operations.
       - Maybe introduce a new variable to count plus operations;
         output the final number.  What patterns emerge?
