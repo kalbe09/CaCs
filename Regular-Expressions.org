@@ -392,15 +392,14 @@ if m2 is None:
     #+end_src
     #+begin_notes
     This Python code searches for the pattern “Data”, but only at the
-    beginning of strings as the regular expression start with the hat
+    beginning of strings as the regular expression starts with the hat
     symbol.
 
     Note that this presentation embeds a software called
     [[https://github.com/viebel/klipse][klipse]], to enable live code
-    execution.  Thus, you can click into the code, edit it, and
-    have results immediately displayed in the output section.
+    execution.  Thus, you can click into the code, edit it, and see
+    results in the output section.
     #+end_notes
-# TODO Record audio
 
 ** Regexp Example: E-Mail
    :PROPERTIES:
