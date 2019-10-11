@@ -4,7 +4,7 @@
 # Copyright (C) 2019 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
-#+KEYWORDS: web server, nginx, solid,
+#+KEYWORDS: web server, nginx,
 
 * Docker
 ** Docker Installation
@@ -77,13 +77,3 @@
 	- E.g., ~docker run -p 8080:80 -v
           /c/Users/<your-name>/<folder-with-index.html>:/usr/share/nginx/html nginx~
 	  - [[https://stackoverflow.com/questions/33312662/docker-toolbox-mount-file-on-windows][Maybe you need double slashes]]
-
-** Solid Steps
-   :PROPERTIES:
-   :CUSTOM_ID: docker-solid
-   :END:
-   - Experiment with Solid in class
-     - Check [[https://github.com/solid/node-solid-server/issues/1167][this issue]]
-     - ~docker run -p 8443:8443 aveltens/solid-server~
-       - Visit [[https://localhost:8443][local server]]
-       - Certificate warnings revisited in upcoming session

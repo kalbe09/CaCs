@@ -1,0 +1,17 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Copyright (C) 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+KEYWORDS: solid,
+
+** Solid Steps
+   :PROPERTIES:
+   :CUSTOM_ID: docker-solid
+   :END:
+   - Experiment with Solid in class
+     - Check [[https://github.com/solid/node-solid-server/issues/1167][this issue]]
+     - ~docker run -p 8443:8443 aveltens/solid-server~
+       - Visit [[https://localhost:8443][local server]]
+       - Certificate warnings revisited in upcoming session
