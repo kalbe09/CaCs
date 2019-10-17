@@ -36,11 +36,16 @@ Im Zuge der Web-Entwicklung können Sie beispielsweise per
 [[https://oer.gitlab.io/oer-courses/vm-oer/04-Docker.html#slide-docker-nginx][Docker]]
 einen Web-Server auf dem eigenen Rechner betreiben, der während der
 Entwicklung Ihre Web-Ressourcen ausliefert.
-Zudem existieren Online-Editoren, die gleichzeitig sowohl den Quelltext
-einer Web-Seite als auch ihre Browser-Darstellung live anzeigen.  In
-sehr einfacher Form funktioniert das {{{zb}}} mit dieser
+
+Zudem existieren Online-Editoren, die gleichzeitig sowohl den
+Quelltext einer Web-Seite als auch ihre Browser-Darstellung live
+anzeigen.  In sehr einfacher Form funktioniert das {{{zb}}} mit dieser
 [[https://oer.gitlab.io/misc/HTML-CSS-klipse.html][Reveal.js-Präsentation]].
-Fügen Sie dort testweise eine Überschrift der Ebene 2 hinzu.
+Fügen Sie dort testweise eine Überschrift der Ebene 2 hinzu.  Beachten
+Sie, dass CSS-Vorgaben aus dem umgebenden Dokument wirken und
+Ihre CSS-Angaben evtl. überschreiben.  Verändern Sie die Schriftgröße,
+etwa mit einer eigenen, neuen CSS-Klasse (ähnlich ~demo-headline~ im
+Beispieldokument).
 
 Umfangreichere Funktionalität bieten etwa
 [[https://jsbin.com/][JS Bin]]
