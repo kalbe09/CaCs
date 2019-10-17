@@ -1,0 +1,100 @@
+# Local IspellDict: de
+#+STARTUP: showeverything
+# Copyright (C) 2018-2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+KEYWORDS: HTML, CSS, JavaScript, Separation of Concerns, Some-Origin Policy, Cross-Origin Sharing, Cross-Site Scripting, XSS,
+
+* HTML
+Die [[https://de.wikipedia.org/wiki/Hypertext_Markup_Language][Hypertext Markup Language (HTML)]]
+ist /die/ Sprache (genauer: Sprachfamilie) des Web, die typischerweise
+in Kombination mit CSS und JavaScript zum Einsatz kommt.  Das
+[[https://wiki.selfhtml.org/wiki/Startseite][selfHTML-Wiki]] ist
+/die/ deutschsprachige OER rund um HTML.
+
+Lesen Sie
+[[https://wiki.selfhtml.org/wiki/HTML/Tutorials/Trennung_von_Inhalt,_Pr%C3%A4sentation_und_Verhalten][im selfHTML-Wiki]],
+wie mit diesen drei Sprachen Inhalt, Präsentation und Verhalten getrennt
+werden, und *erklären* Sie danach
+was unter „Separation of Concerns“ verstanden wird, welche Vorteile
+die Einhaltung dieses Prinzips verspricht und wie es mit der Trennung
+von Inhalt, Präsentation und Verhalten im Kontext von HTML, CSS und
+JavaScript zusammenhängt.
+
+Wenn Sie noch keine Erfahrung mit HTML haben, empfehle ich
+[[https://wiki.selfhtml.org/wiki/HTML/Tutorials/HTML-Einstieg][diesen HTML-Einstieg im selfHTML-Wiki]],
+der auch Grundlagen von CSS behandelt.
+Weitergehende Details zu CSS finden sich dann im
+[[https://wiki.selfhtml.org/wiki/CSS/Einstieg_in_CSS][Einstieg in CSS]].
+Um die Grundlagen von JavaScript zu erlernen, können Sie das
+[[http://www.jshero.net/][Tutorial JavaScript Hero]] absolvieren.
+(Im Kontext dieses Vertiefungsmoduls ist das allerdings nicht nötig.
+Die weiter unten angegebenen Texte des selfHTML-Wiki zum DOM sollten
+Ihnen helfen, die folgenden Aufgaben zu lösen.)
+
+Im Zuge der Web-Entwicklung können Sie beispielsweise per
+[[https://oer.gitlab.io/oer-courses/vm-oer/04-Docker.html#slide-docker-nginx][Docker]]
+einen Web-Server auf dem eigenen Rechner betreiben, der während der
+Entwicklung Ihre Web-Ressourcen ausliefert.
+Zudem existieren Online-Editoren, die gleichzeitig sowohl den Quelltext
+einer Web-Seite als auch ihre Browser-Darstellung live anzeigen.  In
+sehr einfacher Form funktioniert das {{{zb}}} mit dieser
+[[https://oer.gitlab.io/misc/HTML-CSS-klipse.html][Reveal.js-Präsentation]].
+Fügen Sie dort testweise eine Überschrift der Ebene 2 hinzu.
+
+Umfangreichere Funktionalität bieten etwa
+[[https://jsbin.com/][JS Bin]]
+([[https://github.com/jsbin/jsbin][v4 als freie Software]])
+oder proprietäre Alternativen wie [[https://jsfiddle.net/][JSFiddle]]
+([[https://jsfiddle.net/SELFHTML/tvxTg/][Hello-World-Beispiel von selfHTML]])
+und [[https://codepen.io/][CodePen]].
+
+* JavaScript, Same- und Cross-Origin
+Als Schnittstelle zwischen JavaScript und HTML dient das
+Document Object Model (DOM), zu dem das selfHTML-Wiki eine
+[[https://wiki.selfhtml.org/wiki/JavaScript/DOM][Kurzerläuterung]]
+und ein
+[[https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/Grundlagen_des_DOM][etwas längeres Tutorial]]
+liefert.
+
+In der Regel befolgen Browser die sogenannte
+[[https://en.wikipedia.org/wiki/Same-origin_policy][Same-Origin-Policy]],
+nach der beispielsweise JavaScript von einer Web-Seite nur dann auf
+das DOM einer zweiten Web-Seite zugreifen darf, wenn beide Web-Seiten
+denselben Ursprung (engl. /origin/, deutsch manchmal auch irreführend
+Domäne) aufweisen, ihre URLs also (1) dasselbe Schema ({{{zb}}} beide
+~http~ oder beide ~https~), (2) denselben Servernamen (IP-Adresse oder
+Domänenname, {{{zb}}} ~www.uni-muenster.de~) und (3) denselben Port
+({{{zb}}} Port 8080) aufweisen.  Durch diese Einschränkung der
+Same-Origin-Policy soll verhindert werden, dass schützenswerte Inhalte
+einer Web-Seite ({{{zb}}} Cookies) von einer anderen (bösartigen)
+Web-Seite ausgelesen oder verändert werden.
+
+Um Ressourcen aus verschiedenen Domänen zu kombinieren und die
+Zusammenarbeit zwischen verschiedenen Ursprüngen gezielt zuzulassen,
+gibt es einerseits den Ansatz
+[[https://en.wikipedia.org/wiki/Cross-origin_resource_sharing][Cross-Origin Resource Sharing (CORS)]].
+Andererseits stellt die JavaScript-Methode
+[[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage][Window.postMessage()]]
+ein Beispiel für die sichere Cross-Origin-Kommunikation zwischen
+Window-Objekten ({{{zb}}} Seite und Pop-up oder iframe) dar, das
+[[http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage][in diesem Blog-Beitrag]]
+aufgegriffen wird.  Unter anderem verweist der Blog-Beitrag auf eine
+[[http://codepen.io/matt-west/pen/lpExI][Live-Demo auf CodePen]].
+Bearbeiten Sie zu dieser Demo bitte folgende Aufgaben!
+
+1. Wieso funktioniert die Live-Demo nicht? (Es kann hilfreich sein,
+   sich Browser-Meldungen anzeigen zu lassen. Im Firefox können Sie
+   diese beispielsweise in der Console anzeigen lassen, die als Reiter
+   nach Drücken der Tastenkombination Strg-Umschalt-i erreichbar
+   ist. Zudem können Sie dann HTML, CSS und JavaScript inspizieren.)
+2. In Learnweb finden Sie ein ZIP-Archiv mit auf der Demo basierendem
+   Code.  Vergewissern Sie sich, dass Sie den Code verstehen und
+   testen ihn dann, indem Sie mit Docker zwei Web-Server (auf
+   unterschiedlichen Ports, die Sie dem Quelltext entnehmen) nutzen.
+   Geben Sie hier an, wie Sie die Server starten und was Sie zum Test
+   im Browser gemacht haben.
+
+# Local Variables:
+# indent-tabs-mode: nil
+# End:
