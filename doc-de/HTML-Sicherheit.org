@@ -12,6 +12,7 @@ Sicherheitslücken, wozu das
 [[https://www.owasp.org/][Open Web Application Security Project (OWASP)]]
 zahlreiche OER bereitstellt (vgl.
 [[https://www.owasp.org/index.php/Category:Attack][Übersicht der Kategorie „Attack“]]).
+
 Lesen Sie, was unter
 [[https://www.owasp.org/index.php/Injection_Theory][Injection Theory]]
 verstanden wird, in deren Rahmen Cross Site Scripting  (XSS)
@@ -20,9 +21,9 @@ bei OWASP]],
 [[https://en.wikipedia.org/wiki/Cross-site_scripting][Wikipedia-Artikel]])
 erklärt werden kann.  Zum Schutz vor XSS liefert
 [[https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet][OWASP ein Cheat Sheet]].
-Beachten Sie, dass die oben genannte
+Beachten Sie, dass beispielsweise die
 [[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage][Dokumentation zur Java-Script-Methode ~postMessage()~]]
-folgenden Hinweis enthält: „always verify the syntax of the received message“
+folgenden Hinweis enthält: always verify the syntax of the received message
 
 # Local Variables:
 # indent-tabs-mode: nil
