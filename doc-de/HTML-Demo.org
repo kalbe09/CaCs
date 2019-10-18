@@ -46,5 +46,5 @@ Klasse ~demo-headline~ durch ~h1.demo-headline~) und vieles mehr.
 Kombination mit Ihren CSS-Angaben wirken (Änderungen an ~i~
 beeinflussen beispielsweise alle kursiven Elemente im Text).  Was Sie
 alles mit CSS ändern können, erfordert Ihre eigene Recherche.
-Verändern Sie etwa die Schriftgröße mit einer eigenen, neuen
-CSS-Klasse (ähnlich ~demo-headline~ im Beispieldokument).
+Verändern Sie etwa die Schriftgröße bestimmter Elemente mit einer
+eigenen CSS-Klasse.
