@@ -42,8 +42,9 @@ Klasse ~demo-headline~ durch ~h1.demo-headline~) und vieles mehr.
 
 Ändern Sie obiges Dokument, fügen Sie {{{zb}}} testweise eine
 Überschrift der Ebene 2 hinzu, und ändern Sie den Stil des Elements
-~i~.  Beachten Sie, dass CSS-Vorgaben aus dem umgebenden Dokument
-in Kombination mit Ihren CSS-Angaben wirken (Änderungen an
-~i~ beeinflussen beispielsweise alle kursiven Elemente im Text).
-Verändern Sie die Schriftgröße, etwa mit einer eigenen, neuen
+~i~.  Beachten Sie, dass CSS-Vorgaben aus dem umgebenden Dokument in
+Kombination mit Ihren CSS-Angaben wirken (Änderungen an ~i~
+beeinflussen beispielsweise alle kursiven Elemente im Text).  Was Sie
+alles mit CSS ändern können, erfordert Ihre eigene Recherche.
+Verändern Sie etwa die Schriftgröße mit einer eigenen, neuen
 CSS-Klasse (ähnlich ~demo-headline~ im Beispieldokument).
