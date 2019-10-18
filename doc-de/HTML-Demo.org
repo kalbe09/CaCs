@@ -14,7 +14,7 @@ Browser dargestellte Ansicht.
 #+BEGIN_SRC html
 <style>
 h1.demo-headline { color: blue; }
-i { color: brown; }
+i { color: darkblue; }
 .green { color: green; }
 #demo-id { color: red; }
 </style>
@@ -34,11 +34,12 @@ Gliederungsebene (~h1~) und zwei Paragraphen (~p~).
 CSS-Regeln werden in ihrer eigenen Sprache definiert.  Hier sehen Sie
 verschiedene Farben, die durch unterschiedliche *Selektoren* an Teile
 des HTML-Dokuments gebunden werden.  Eine Regel legt fest, dass
-Element ~i~ braun dargestellt wird.  Zudem können Regeln für *Klassen*
-definiert werden, deren Namen ein Punkt vorangestellt wird (hier
-~green~), für eindeutig *identifizierte* Elemente (mit einem Hashtag wie bei
-~#demo-id~), für Kombinationen (Überschriften der Ebene 1 /und/ der
-Klasse ~demo-headline~ durch ~h1.demo-headline~) und vieles mehr.
+Element ~i~ in Dunkelblau dargestellt wird.  Zudem können Regeln für
+*Klassen* definiert werden, deren Namen ein Punkt vorangestellt wird
+(hier ~green~), für eindeutig *identifizierte* Elemente (mit einem
+Hashtag wie bei ~#demo-id~), für Kombinationen (Überschriften der
+Ebene 1 /und/ der Klasse ~demo-headline~ durch ~h1.demo-headline~) und
+vieles mehr.
 
 Ändern Sie obiges Dokument, fügen Sie {{{zb}}} testweise eine
 Überschrift der Ebene 2 hinzu, und ändern Sie den Stil des Elements
