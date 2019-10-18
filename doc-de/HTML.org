@@ -39,14 +39,9 @@ Entwicklung Ihre Web-Ressourcen ausliefert.
 
 Zudem existieren Online-Editoren, die gleichzeitig sowohl den
 Quelltext einer Web-Seite als auch ihre Browser-Darstellung live
-anzeigen.  In sehr einfacher Form funktioniert das {{{zb}}} mit dieser
-[[https://oer.gitlab.io/misc/HTML-CSS-klipse.html][Reveal.js-Präsentation]].
-Fügen Sie dort testweise eine Überschrift der Ebene 2 hinzu.  Beachten
-Sie, dass CSS-Vorgaben aus dem umgebenden Dokument wirken und
-Ihre CSS-Angaben evtl. überschreiben.  Verändern Sie die Schriftgröße,
-etwa mit einer eigenen, neuen CSS-Klasse (ähnlich ~demo-headline~ im
-Beispieldokument).
-
+anzeigen.  In sehr einfacher Form funktioniert das {{{zb}}} in
+HTML-Dokumenten, in denen das Plugin
+[[https://github.com/viebel/klipse][Klipse]] eingebettet ist.
 Umfangreichere Funktionalität bieten etwa
 [[https://jsbin.com/][JS Bin]]
 ([[https://github.com/jsbin/jsbin][v4 als freie Software]])
@@ -88,8 +83,8 @@ aufgegriffen wird.  Unter anderem verweist der Blog-Beitrag auf eine
 [[http://codepen.io/matt-west/pen/lpExI][Live-Demo auf CodePen]].
 Bearbeiten Sie zu dieser Demo bitte folgende Aufgaben!
 
-1. Wieso funktioniert die Live-Demo nicht? (Es kann hilfreich sein,
-   sich Browser-Meldungen anzeigen zu lassen. Im Firefox können Sie
+1. Wieso funktioniert die Live-Demo nicht? (Es hilft,
+   sich Meldungen in der Browser-Console anzeigen zu lassen. Im Firefox können Sie
    diese beispielsweise in der Console anzeigen lassen, die als Reiter
    nach Drücken der Tastenkombination Strg-Umschalt-i erreichbar
    ist. Zudem können Sie dann HTML, CSS und JavaScript inspizieren.)

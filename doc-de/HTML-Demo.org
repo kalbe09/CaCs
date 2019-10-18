@@ -1,0 +1,49 @@
+# Local IspellDict: de
+#+STARTUP: showeverything
+# Copyright (C) 2019 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+KEYWORDS: Klipse, HTML, CSS, Stil, Element, Tag, Selektor, Regel, Klasse, Demo,
+
+* Demo-HTML-Fragment
+Das folgende HTML-Fragment ist (dank des Plugins
+[[https://github.com/viebel/klipse][Klipse]])
+im oberen Bereich /editierbar/ und zeigt im unteren Bereich die vom
+Browser dargestellte Ansicht.
+
+#+BEGIN_SRC html
+<style>
+h1.demo-headline { color: blue; }
+i { color: brown; }
+.green { color: green; }
+#demo-id { color: red; }
+</style>
+<h1 class="demo-headline">Hello World!</h1>
+<p class="green">This is a <i>paragraph</i> of text with class “green”.</p>
+<p id="demo-id">This is another paragraph with id “demo-id”.</p>
+#+END_SRC
+
+Ganz grob bestehen HTML-Dokumente aus *Elementen*, die durch öffnende
+und schließende *Tags* definiert werden.  Das Beispiel-Fragment
+beginnt mit dem Element ~style~ (zwischen öffnendem Tag ~<style>~ und
+schließendem Tag ~</style>~), das zur Definition von *CSS-Regeln*
+dient, die das Layout bestimmen (Schriftart, -größe, -farbe, Abstände
+usw.).  Auf die Stildefinition folgen eine Überschrift der ersten
+Gliederungsebene (~h1~) und zwei Paragraphen (~p~).
+
+CSS-Regeln werden in ihrer eigenen Sprache definiert.  Hier sehen Sie
+verschiedene Farben, die durch unterschiedliche *Selektoren* an Teile
+des HTML-Dokuments gebunden werden.  Eine Regel legt fest, dass
+Element ~i~ braun dargestellt wird.  Zudem können Regeln für *Klassen*
+definiert werden, deren Namen ein Punkt vorangestellt wird (hier
+~green~), für eindeutig *identifizierte* Elemente (mit einem Hashtag wie bei
+~#demo-id~), für Kombinationen (Überschriften der Ebene 1 /und/ der
+Klasse ~demo-headline~ durch ~h1.demo-headline~) und vieles mehr.
+
+Ändern Sie obiges Dokument, fügen Sie {{{zb}}} testweise eine
+Überschrift der Ebene 2 hinzu, und ändern Sie den Stil des Elements
+~i~.  Beachten Sie, dass CSS-Vorgaben aus dem umgebenden Dokument
+wirken und in Kombination mit Ihren CSS-Angaben wirken (Änderungen an
+~i~ wirken beispielsweise an allen kursiven Elementen im Text).
+Verändern Sie die Schriftgröße, etwa mit einer eigenen, neuen
+CSS-Klasse (ähnlich ~demo-headline~ im Beispieldokument).
