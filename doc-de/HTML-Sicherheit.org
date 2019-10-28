@@ -20,7 +20,7 @@ verstanden wird, in deren Rahmen Cross Site Scripting  (XSS)
 bei OWASP]],
 [[https://en.wikipedia.org/wiki/Cross-site_scripting][Wikipedia-Artikel]])
 erklärt werden kann.  Zum Schutz vor XSS liefert
-[[https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet][OWASP ein Cheat Sheet]].
+[[https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html][OWASP ein Cheat Sheet]].
 Beachten Sie, dass beispielsweise die
 [[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage][Dokumentation zur Java-Script-Methode ~postMessage()~]]
 folgenden Hinweis enthält: always verify the syntax of the received message
