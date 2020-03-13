@@ -1,0 +1,39 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# SPDX-FileCopyrightText: 2017-2020 Jens Lechtenbörger
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+#+KEYWORDS: Java, compiler, object, class, interface, this,
+
+* Install Java and IDE
+  We expect you to be able to program in Java on your own machine.
+
+  - You need a
+    [[https://en.wikipedia.org/wiki/Java_Development_Kit][Java Development Kit (JDK)]]
+    and a text editor
+    - Or an
+      [[https://en.wikipedia.org/wiki/Integrated_development_environment][Integrated Development Environment, IDE]]
+      - The author of these lines uses
+        [[https://www.gnu.org/software/emacs/][GNU Emacs]]
+        for most of his text related activities
+        - Including “normal” writing, programming, creating learning
+          material, reading and writing e-mail, keeping track of
+          appointments and reminders
+
+** Tasks
+   1. Compile and run
+      [[https://gitlab.com/oer/cs/programming/blob/master/HelloWorld.java][this Java program]],
+      which needs a command line argument
+   2. Change that program to add a test whether an argument is passed
+      (show error message instead of exception when no argument is passed)
+
+* Basic Java Concepts
+  - What are *interfaces* and *classes* in Java, what is the
+    [[https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html][~this~ keyword]]?
+
+    If you are not certain, consult a textbook.  Alternatively,
+    [[https://docs.oracle.com/javase/tutorial/java/TOC.html][these tutorials]]
+    may help.  Note that self-check questions are included:
+    - https://docs.oracle.com/javase/tutorial/java/concepts/QandE/questions.html
+    - https://docs.oracle.com/javase/tutorial/java/IandI/QandE/interfaces-questions.html
