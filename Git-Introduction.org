@@ -164,7 +164,7 @@
        - ~git clone https://gitlab.com/oer/cs/programming.git~
        - Creates directory ~programming~
          - Change into that directory
-         - Note presence of sub-directory ~.git~ (with Git meta-data)
+         - Note presence of “real” contents and of sub-directory ~.git~ (with Git meta-data)
 
 *** Part 1: Inspecting Status
     - Execute ~git status~
