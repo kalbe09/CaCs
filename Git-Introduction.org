@@ -46,7 +46,7 @@
       version
       - Integrate intermediate versions of single file with changes by
   	multiple authors
-    - Copying of files is obsolete with VCSs
+    - Copying of files is *obsolete* with VCSs
       - Do *not* create copies of files with names such as
 	~Git-Intro-Final-1.1.txt~ or
 	~Git-Intro-Final-reviewed-Alice.txt~
