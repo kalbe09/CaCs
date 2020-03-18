@@ -109,9 +109,9 @@
    :CUSTOM_ID: vcs-review
    :END:
     Prepare answers to the following questions
-    - What is the role of a VCS (or SCM, in Torvald’s terminology)?
+    - What is the role of a VCS (or SCM, in Torvalds’ terminology)?
     - What differences exist between decentralized and centralized VCSs?
-      - By the way, Torvald distinguishes centralized from distributed
+      - By the way, Torvalds distinguishes centralized from distributed
         SCMs.  I prefer “decentralized” over “distributed”.  You?
 
 
