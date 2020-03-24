@@ -64,8 +64,8 @@
 *** Major VCS features
     #+ATTR_REVEAL: :frag (appear)
     - VCS keeps track of *history*
-      - Who changed what/why when?
-      {{{reveallicense("./figures/abstract/arrows-2033963_1920.meta","35vh")}}}
+      - Who changed what why when?
+        {{{reveallicense("./figures/abstract/arrows-2033963_1920.meta","35vh")}}}
     - VCS supports *merging* of versions into *unified/integrated*
       version
       - Integrate intermediate versions of single file with changes by
