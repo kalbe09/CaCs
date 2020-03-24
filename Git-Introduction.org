@@ -92,6 +92,7 @@
        - Every author has *own copy* of all documents and their history
        - Supports *offline* work without server connectivity
          - Of course, collaboration requires network connectivity
+       - Distributed trust/control/visibility/surveillance
 
 ** Key Terms: Fork, Commit, Push, Pull
    - *Fork/clone* repository
@@ -119,6 +120,7 @@
    - *Merge*
      - Combine changes of one branch into another branch
        - May or may not need to [[https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/][resolve conflicts]]
+   - (Don’t worry if this seems abstract, we’ll try this out.)
 
 ** Git explained by Linus Torvalds
    @@html:<video controls width="400" height="300" data-src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
@@ -171,6 +173,8 @@
       [[file:../../../OS/Operating-Systems-Security.html#asym-intuition][asymmetric cryptography]]
       - Popular [[https://en.wikipedia.org/wiki/Free_and_open-source_software][free]] implementation: [[https://www.openssh.com/][OpenSSH]]
 	- Tool to create key pair: ~ssh-keygen~
+      - Used by Git in background to communicate over secure channel
+        with [[file:../../../OS/Operating-Systems-Security.html#security-services-2][authentication]]
     - [[https://docs.gitlab.com/ce/ssh/README.html][Instructions on GitLab]]
       - (In case you are affected, note that [[https://gitforwindows.org/][Git Bash on Windows]]
         is mentioned)
@@ -230,7 +234,7 @@
     - Execute both ~diff~ variants again
       - Lots of other variants exits
         - Execute ~git help diff~
-        - Similarly, help for other ~git~ commands is available
+        - Similarly, *help* for other ~git~ commands is available
 
 *** Part 4: Committing Changes
     - Commit (to be committed) changes
@@ -252,7 +256,7 @@
         - (*Don’t* do this for commits that exist in remote places)
       - Execute ~git status~ and ~git log~
         - Note that state before commit is restored
-        - May applied more changes, commit later
+        - May apply more changes, commit later
     - Undo ~git add~ with ~git reset~
       - Execute ~git add Git-Introduction.org~
       - Execute ~git reset Git-Introduction.org~
@@ -376,11 +380,11 @@ git push
      - So-called Continuous Integration (CI) runners to be executed upon
        commit
        - Based on Docker images
-       - Build whatever needs building in your project (executables,
-         documentation, presentations, etc.)
+       - Build and test your project (build executables, test them,
+         deploy them, generate documentation, presentations, etc.)
 
 ** GitLab in Action
-   - In class
+   - Exercise
 
 * Aside: Lightweight Markup Languages
 ** Lightweight Markup
