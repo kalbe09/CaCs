@@ -14,7 +14,9 @@
    :END:
    - Discuss benefits and challenges of [[#vcs][version control systems]]
      (e.g., in the context of university study) and
-     [[#vcs-review][contrast]] decentralized ones with centralized ones
+     [[#vcs-review][contrast]]
+     [[https://en.wikipedia.org/wiki/Decentralization][decentralized]] ones
+     with centralized ones
    - Explain [[#states-review][states of files under Git]] and apply commands to manage them
    - Explain [[#git-workflow][Feature Branch Workflow]] and apply it
      in sample scenarios
@@ -88,7 +90,7 @@
    - Git created by Linus Torvalds for the development of the [[https://www.kernel.org/][kernel Linux]]
      - Reference: [[https://git-scm.com/book/en/v2][Pro Git book]]
        {{{reveallicense("./figures/logos/Git-Logo-2Color.meta","15vh")}}}
-     - Git as example of *decentralized* VCS
+     - Git as example of *[[https://en.wikipedia.org/wiki/Decentralization][decentralized]]* VCS
        - Every author has *own copy* of all documents and their history
        - Supports *offline* work without server connectivity
          - Of course, collaboration requires network connectivity
