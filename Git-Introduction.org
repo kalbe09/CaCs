@@ -22,6 +22,7 @@
 #+INCLUDE: "~/.emacs.d/oer-reveal-org/learning-objectives-notes.org"
 
 ** Core Questions
+   #+ATTR_REVEAL: :frag (appear)
    - How to *collaborate* on shared documents as distributed team?
      {{{reveallicense("./figures/screenshots/magit.meta","45vh")}}}
      - Consider *multiple* people working on *multiple* files
@@ -31,12 +32,30 @@
    - How to keep track of who changed what why?
    - How to support unified/integrated end result?
 
+** Your Experiences?
+   - Briefly write down your own experiences.
+     #+ATTR_REVEAL: :frag (appear)
+     - Did you collaborate on documents
+       - by sending them via e-mail,
+       - by using shared (cloud) storage (e.g.,
+         [[https://www.sciebo.de/en/manual/simultaneous.html][Sciebo with OnlyOffice]], Google),
+       - by using collaborative editors (e.g.,
+         [[https://www.sciebo.de/en/manual/simultaneous.html][Sciebo with OnlyOffice]],
+         [[https://pad.riseup.net/][Etherpad]],
+         [[https://pad.gwdg.de/][CodiMD]], Overleaf)
+       - by using version control systems (e.g., Git, SVN),
+       - by using other means?
+     - Why did you choose what alternative?  What challenges arose?  Do
+       you bother to read Terms of Service when you entrust “your”
+       documents and thoughts (each individual keystroke, including “deleted”
+       parts) to third parties (e.g., in the cloud)?
+
 ** Version Control Systems (VCSs)
    :PROPERTIES:
    :CUSTOM_ID: vcs
    :END:
    - Synonyms: Version/source code/revision control system, source
-     code management (SCM)
+     code management (VCS, SCM)
    - Collaboration on *repository* of documents
      - Each document going through various versions/revisions
        - Each document improved by various authors
