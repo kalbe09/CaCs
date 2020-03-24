@@ -8,13 +8,18 @@
 
 * Introduction
 ** Learning Objectives
-   - Explain benefits of [[#vcs][version control systems]] (e.g., in the context
-     of university study) and [[#vcs-review][contrast]] decentralized ones with
-     centralized ones
+   :PROPERTIES:
+   :CUSTOM_ID: learning-objectives-git
+   :reveal_extra_attr: data-audio-src="https://oer.gitlab.io/audio/learning-objectives.ogg"
+   :END:
+   - Discuss benefits and challenges of [[#vcs][version control systems]]
+     (e.g., in the context of university study) and
+     [[#vcs-review][contrast]] decentralized ones with centralized ones
    - Explain [[#states-review][states of files under Git]] and apply commands to manage them
    - Explain [[#git-workflow][Feature Branch Workflow]] and apply it
      in sample scenarios
    - Edit simple [[#markdown][Markdown]] documents
+#+INCLUDE: "~/.emacs.d/oer-reveal-org/learning-objectives-notes.org"
 
 ** Core Questions
    - How to *collaborate* on shared documents as distributed team?
