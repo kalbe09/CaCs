@@ -309,9 +309,9 @@
    :PROPERTIES:
    :CUSTOM_ID: merge-vs-rebase
    :END:
-   - Merge and rebase unify two [[#git-branch][branches]]
+   - Commands ~merge~ and ~rebase~ both unify two [[#git-branch][branches]]
    - Illustrated subsequently
-     - Same unified result
+     - Same unified file contents in the end, but different views of history
 
 *** Merge vs Rebase (1)
     - Suppose you created branch for new ~feature~ and committed on that
