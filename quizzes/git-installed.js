@@ -13,13 +13,14 @@ quizGitInstalled = {
     },
     "questions": [
 	{
-            "q": "Did you install Git?",
+            "q": "Did you install and set up Git?",
             "a": [
-                {"option": "Yes, I'm prepared for practical tasks.", "correct": true},
+                {"option": "Yes, I installed Git and performed the first-time setup.", "correct": true},
+                {"option": "I installed Git but did not perform the first-time setup.", "correct": false},
                 {"option": "No.", "correct": false}
             ],
             "correct": "<p><span>Very good!  You should be in pretty good shape.</span></p>",
-            "incorrect": "<p>Do you need help?  If you do not have time to install Git now, maybe place this presentation on your TODO list and come back later?</p>" // no comma here
+            "incorrect": "<p>Do you need help?  If you do not have time to set up Git now, maybe place this presentation on your TODO list and come back later?</p>" // no comma here
         }
     ]
 };
