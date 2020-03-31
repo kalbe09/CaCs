@@ -13,3 +13,7 @@
    - Virtual machines and containers
      - can be contrasted in terms of their layering approaches
      - allow to deploy software in well-defined environments
+
+# Local Variables:
+# oer-reveal-master: nil
+# End:

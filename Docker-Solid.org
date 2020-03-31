@@ -15,3 +15,7 @@
      - ~docker run -p 8443:8443 aveltens/solid-server~
        - Visit [[https://localhost:8443][local server]]
        - Certificate warnings revisited in upcoming session
+
+# Local Variables:
+# oer-reveal-master: nil
+# End:

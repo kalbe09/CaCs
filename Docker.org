@@ -196,4 +196,5 @@ COPY manage-packages.el /tmp/
 
 # Local Variables:
 # indent-tabs-mode: nil
+# oer-reveal-master: nil
 # End:

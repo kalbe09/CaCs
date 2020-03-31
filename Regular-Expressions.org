@@ -460,4 +460,5 @@ do so on your own.
 # which would destroy indentation for Python.
 # Local Variables:
 # org-src-preserve-indentation: t
+# oer-reveal-master: nil
 # End:

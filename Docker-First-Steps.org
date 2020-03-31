@@ -77,3 +77,7 @@
 	- E.g., ~docker run -p 8080:80 -v
           /c/Users/<your-name>/<folder-with-index.html>:/usr/share/nginx/html nginx~
 	  - [[https://stackoverflow.com/questions/33312662/docker-toolbox-mount-file-on-windows][Maybe you need double slashes]]
+
+# Local Variables:
+# oer-reveal-master: nil
+# End:
