@@ -106,8 +106,9 @@
      {{{reveallicense("./figures/icons/changed-folder.meta","18vh")}}}
      - Make (some or all) changes permanent; announce them to version
        control system
-     - *Push*: Publish (some or all) commits to remote location
-     - *Fetch* (*pull*): Retrieve commits from remote location (also
+     - *Push*: Publish (some or all) commits to remote repository
+       - Requires authorization
+     - *Fetch* (*pull*): Retrieve commits from remote repository (also
        merge them)
 
 ** Key Terms: Branch, Merge
