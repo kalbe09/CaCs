@@ -184,6 +184,9 @@
       - (In case you are affected, note that [[https://gitforwindows.org/][Git Bash on Windows]]
         is mentioned)
 
+*** A quick check
+#+REVEAL_HTML: <script data-quiz="quizGitInstalled" src="quizzes/git-installed.js"></script>
+
 ** First Steps with Git
    :PROPERTIES:
    :CUSTOM_ID: git-demo
