@@ -97,9 +97,10 @@
        - Distributed trust/control/visibility/surveillance
 
 ** Key Terms: Fork, Commit, Push, Pull
-   - *Fork/clone* repository
+   - *Fork/clone* repository: Create copy of repository
      {{{reveallicense("./figures/icons/cloned-folder.meta","8vh")}}}
-     - Create your own copy of a repository
+     - Fork: Create copy within online Git platform
+     - Clone: Create copy of remote repository on your machine
    #+ATTR_REVEAL: :frag appear
    - *Commit* (aka check-in)
      {{{reveallicense("./figures/icons/changed-folder.meta","18vh")}}}
