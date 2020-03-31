@@ -149,6 +149,8 @@
 
 ** Getting Started
    - [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Install Git]]
+     - Perform the
+       [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][First-time Git setup]]
    #+ATTR_REVEAL: :frag (appear)
    - Really, please
      [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][install Git]] now
@@ -196,7 +198,8 @@
    - Prerequisites
      - You [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][installed Git]]
      - You performed the
-       [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][First time Git setup]]
+       [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][First-time Git setup]]
+   #+ATTR_REVEAL: :frag appear
    - Part 0
      - Create repository or clone one
        - ~git clone https://gitlab.com/oer/cs/programming.git~
