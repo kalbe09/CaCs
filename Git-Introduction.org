@@ -342,11 +342,12 @@
     :PROPERTIES:
     :CUSTOM_ID: git-workflow
     :END:
-   - Team needs to agree on *git workflow*
+   - For collaboration, team needs to agree on *git workflow*
      - [[https://www.atlassian.com/git/tutorials/comparing-workflows][Several alternatives]] exist
    - [[https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow][Feature Branch Workflow]]
      may be your starting point
-     - Clone remote repository
+     - Clone repository (maybe your forked version)
+       - You need a repository to which you are allowed to push commits
      - Create separate branch for *each* independent contribution
        - E.g., bug fix, new feature, improved documentation
        - Enables independent work
