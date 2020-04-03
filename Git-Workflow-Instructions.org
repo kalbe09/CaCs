@@ -115,9 +115,9 @@ One important command may be
 happened at the remote end as well as at yours.  In this situation,
 ~git push~ is rejected.  Try ~git pull --rebase~ first, then push
 again.  Also, in this situation, ~git pull~ would offer to merge
-changes, leading to an additional commit.  With this command, however,
-remote commits are fetched, and your local commits are re-executed on
-top of that (see
+changes, leading to an additional commit.  With option ~--rebase--,
+however, remote commits are fetched, and your local commits are
+re-executed on top of that (see
 [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-rebase][slide on “git rebase”]]).
 Afterwards, ~git push~ should succeed.  In general, for questions that
 I have related to Git, Stack Overflow has answers.  You may want to
