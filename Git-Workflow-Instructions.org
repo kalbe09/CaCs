@@ -93,7 +93,7 @@ In the following, M1, M2, … indicate different group members.
 After I merged your branch, my project is ahead of yours.  To bring
 your project up-to-date (possibly including changes of other groups as
 well), please do the following in your project (see
-[[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote]][Git Introduction on ~git remote~]]).
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote][Git Introduction on ~git remote~]]).
 
 #+begin_src sh
 git remote add upstream <the HTTP URL of original project>
