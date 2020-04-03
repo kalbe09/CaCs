@@ -319,6 +319,26 @@
       - Execute ~git checkout master~ and ~git checkout testbranch~ to
         switch branches
 
+*** Part 8: Remotes
+    :PROPERTIES:
+    :CUSTOM_ID: git-remote
+    :END:
+    - Show remote repositories, whose changes you track:
+      - ~git remote -v~
+        - By default, remote after ~git clone~ is called ~origin~
+        - No remote exists after ~git init~
+      - Push new branch to remote ~origin~:
+        - ~git push -u origin testbranch~
+    - Contribute to forked project
+      - Set up source project as remote ~upstream~:
+        - ~git remote add upstream <HTTPS-URL of source project>~
+      - Fetch and integrate its state:
+        - ~git fetch upstream~
+        - Integrate its ~master~ into your ~master~, maybe with
+          [[#merge-vs-rebase][rebase]]:
+          - ~git checkout master~
+          - ~git rebase upstream/master~
+
 *** Review Questions
    :PROPERTIES:
    :CUSTOM_ID: states-review
