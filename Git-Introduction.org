@@ -170,7 +170,7 @@
          authentication; register under your account’s settings
      - Fork project
        - either in GUI
-       - or clone your copy, [[https://www.atlassian.com/git/articles/git-forks-and-upstreams][add upstream]]
+       - or clone your copy, [[#git-remote][manage remote upstream]]
 
 *** Secure Shell
     :PROPERTIES:
@@ -323,7 +323,9 @@
     :PROPERTIES:
     :CUSTOM_ID: git-remote
     :END:
-    - Show remote repositories, whose changes you track:
+    - Show
+      [[https://www.atlassian.com/git/articles/git-forks-and-upstreams][remote repositories]],
+      whose changes you track:
       - ~git remote -v~
         - By default, remote after ~git clone~ is called ~origin~
         - No remote exists after ~git init~
