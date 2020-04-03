@@ -44,12 +44,12 @@ In the following, M1, M2, … indicate different group members.
    shows my browser’s upper right).  Default settings should be fine.
 
    In your fork, assign the remaining group members as Developers and
-   me (my usename is {{{gitusername}}}) as Guest or higher. (As Guest, I can open
-   so-called Issues to offer feedback if necessary, but I can neither
-   clone your fork nor see your branch.  That would be possible in
-   other roles.)  To assign members in the fork, to the *left*, go to
-   the project’s “Settings → Members” (/not/ part of screenshot),
-   search members and assign roles.
+   me (my username is {{{gitusername}}}) as Guest or higher. (As
+   Guest, I can open so-called Issues to offer feedback if necessary,
+   but I can neither clone your fork nor see your branch.  That would
+   be possible in other roles.)  To assign members in the fork, to the
+   *left*, go to the project’s “Settings → Members” (/not/ part of
+   screenshot), search members and assign roles.
 
    The newly added project members (including me) receive e-mails with
    the address of the forked project.
