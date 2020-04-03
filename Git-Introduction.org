@@ -113,7 +113,7 @@
 
 ** Key Terms: Branch, Merge
    :PROPERTIES:
-   :CUSTOM_ID: git-branch
+   :CUSTOM_ID: git-branches
    :END:
    - *Branches*
      {{{reveallicense("./figures/git/git-branches.meta","30vh")}}}
@@ -317,7 +317,7 @@
    :PROPERTIES:
    :CUSTOM_ID: merge-vs-rebase
    :END:
-   - Commands ~merge~ and ~rebase~ both unify two [[#git-branch][branches]]
+   - Commands ~merge~ and ~rebase~ both unify two [[#git-branches][branches]]
    - Illustrated subsequently
      - Same unified file contents in the end, but different views of history
 
