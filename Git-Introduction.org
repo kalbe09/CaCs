@@ -208,6 +208,9 @@
          - Note presence of “real” contents and of sub-directory ~.git~ (with Git meta-data)
 
 *** Part 1: Inspecting Status
+    :PROPERTIES:
+    :CUSTOM_ID: git-status
+    :END:
     - Execute ~git status~
       - Output includes current branch (~master~) and potential changes
     - Open some file in text editor and improve it
@@ -222,6 +225,9 @@
           - ~git checkout~ to discard changes
 
 *** Part 2: Staging Changes
+    :PROPERTIES:
+    :CUSTOM_ID: git-stage
+    :END:
     - Changes need to be ~staged~ before commit
       - ~git add~ is used for that purpose
       - Execute ~git add Git-Introduction.org~
@@ -237,6 +243,9 @@
           - Those are your changes of Part 2
 
 *** Part 3: Viewing Differences
+    :PROPERTIES:
+    :CUSTOM_ID: git-diff
+    :END:
     - Execute ~git diff~
       - Output shows changes that are not yet staged
         - Your changes of Part 2
@@ -250,6 +259,9 @@
         - Similarly, *help* for other ~git~ commands is available
 
 *** Part 4: Committing Changes
+    :PROPERTIES:
+    :CUSTOM_ID: git-commit
+    :END:
     - Commit (to be committed) changes
       - Execute ~git commit -m "<what was improved>"~
         - Where ~<what was improved>~ should be meaningful text
@@ -264,6 +276,9 @@
       - Note your commit at top
 
 *** Part 5: Undoing Changes
+    :PROPERTIES:
+    :CUSTOM_ID: git-reset
+    :END:
     - Undo premature commit that only exists *locally*
       - Execute ~git reset HEAD~~
         - (*Don’t* do this for commits that exist in remote places)
@@ -278,6 +293,9 @@
       - *Warning*: Local changes are *lost*
 
 *** Part 6: Stashing Changes
+    :PROPERTIES:
+    :CUSTOM_ID: git-stash
+    :END:
     - Save intermediate changes without commit
       - Execute ~git stash~
       - Execute ~git status~ and find yourself on previous commit
@@ -287,6 +305,9 @@
         - May lead to conflicts, to be resolved manually
 
 *** Part 7: Branching
+    :PROPERTIES:
+    :CUSTOM_ID: git-branch
+    :END:
     - Work on different branch
       - E.g., introduce new feature, fix bug
       - Execute ~git checkout -b testbranch~
@@ -328,6 +349,9 @@
     {{{reveallicense("./figures/git/forked-commit-history.meta","40vh")}}}
 
 *** Merge vs Rebase (2)
+    :PROPERTIES:
+    :CUSTOM_ID: git-merge
+    :END:
     - Merge creates *new* commit to combine both branches
       - Including all commits
       - Keeping parallel history
@@ -335,6 +359,9 @@
     {{{reveallicense("./figures/git/merged-feature.meta","40vh")}}}
 
 *** Merge vs Rebase (3)
+    :PROPERTIES:
+    :CUSTOM_ID: git-rebase
+    :END:
     - Rebase rewrites ~feature~ branch on ~master~
       - Applies commits of ~feature~ on ~master~
       - Cleaner end result, but branch’s history lost/changed
@@ -360,6 +387,9 @@
        - Maintainer may merge branch into ~master~
 
 *** Sample Commands
+    :PROPERTIES:
+    :CUSTOM_ID: git-commands
+    :END:
 #+BEGIN_SRC bash
 git clone <project-URI>
 # Then, later on retrieve latest changes:
