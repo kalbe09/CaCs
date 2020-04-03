@@ -1,0 +1,128 @@
+# Local IspellDict: en
+#+SPDX-FileCopyrightText: 2020 Lechtenbörger
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+#+TITLE: Git Exercise
+#+AUTHOR: Jens Lechtenbörger
+#+OPTIONS: html-style:nil toc:nil
+
+* Introduction
+
+This project is part of a group exercise.
+
+I suppose that you went through the
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html][Git Introduction]]
+and installed and set up Git before you start here.
+
+Please be aware that this is a new exercise, which we are going to
+perform jointly for the first time, so there may be rough edges.
+Please do not hesitate to ask early.  Your first steps with Git will
+seem unfamiliar, but my goal is to help you in this unfamiliar
+terrain.  Git is a powerful tool with many commands and options
+(GitLab even more so), but the basic workflow should not be hard to
+follow.  (As an aside: If you really go for Git, you probably want to
+do that embedded in your daily work environment, where the most
+important Git operations are available through some UI.  My daily work
+environment is GNU Emacs with [[https://magit.vc/][Magit]].)
+
+On our GitLab server, I will assign each of you as “Reporter” to my
+project “{{{gitproject}}}”, and GitLab will notify you once that happened.
+(This will take some time because our admins need to create your
+accounts first, before I assign you manually …)
+Then, you can start with this task, which is meant to practice the
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-workflow][feature
+branch workflow mentioned in the Git Introduction]].
+
+In the following, M1, M2, … indicate different group members.
+
+* Tasks
+
+** Part 1
+[[./gitlab-annotated.png]]
+
+1. Determine group member M1 who forks project “{{{gitproject}}}”.
+2. M1: Go to my project and perform the fork (see screenshot, which
+   shows my browser’s upper right).  Default settings should be fine.
+
+   In your fork, assign the remaining group members as Developers and
+   me (my usename is {{{gitusername}}}) as Guest or higher. (As Guest, I can open
+   so-called Issues to offer feedback if necessary, but I can neither
+   clone your fork nor see your branch.  That would be possible in
+   other roles.)  To assign members in the fork, to the *left*, go to
+   the project’s “Settings → Members” (/not/ part of screenshot),
+   search members and assign roles.
+
+   The newly added project members (including me) receive e-mails with
+   the address of the forked project.
+3. All: Check your notification settings (see screenshot, User
+   settings → Notifications), where you can configure for what events
+   to receive e-mails.  Maybe “Watch” your own project; at least, make
+   sure that you are notified if I open an issue.
+
+   Setup SSH keys (see
+   [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-ssh][Git
+   Introduction for pointers]]).
+
+   Clone the fork to directory “{{{gitproject}}}”.  The necessary address
+   (starting with ~@git~) is visible under the Clone button (see
+   screenshot) under “Clone with SSH”.
+5. M2: Create a new branch that collects your group work for this
+   task, say “g42-task-1”.  Create a new sub-directory (under
+   “{{{gitproject}}}”) for your group, e.g., “G42” if you are group G42.
+
+   Please restrict all your group’s changes to that sub-directory.
+   Add a first document (which will be shared via my project with the
+   entire class subsequently, so, please, take some care), either a
+   text file or some lightweight markup language; maybe start to
+   document your experiences, questions, and answers.  Commit (maybe
+   more than once) and push the branch.
+6. M3: Pull and check out your branch, change the file more, commit,
+   and push.
+7. M4: Create a merge request in GitLab for your branch into my
+   ~master~ branch.
+
+   When you create merge requests, please fill out the title
+   (e.g.., Group 42 - task 1).  The description may remain empty here;
+   in a real project you would explain what you propose to be merged.
+   Note that the option “Delete source branch when merge request is
+   accepted” is checked by default.  Maybe uncheck it to keep your
+   branch.
+
+** Part 2
+After I merged your branch, my project is ahead of yours.  To bring
+your project up-to-date (possibly including changes of other groups as
+well), please do the following in your project (see
+[[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote]][Git Introduction on ~git remote~]]).
+
+#+begin_src sh
+git remote add upstream <the HTTP URL of original project>
+git fetch upstream
+git checkout master
+git rebase upstream/master
+git push
+#+end_src
+
+During you work, you may see error messages, such as ~failed to push
+some refs~.  In particular, ~pull~ and ~push~ only succeed if one
+project is strictly behind or ahead of the other.  Usually, Git
+provides some hints how you may proceed.
+
+One important command may be
+~git pull --rebase~, which you can execute if additional commits
+happened at the remote end as well as at yours.  In this situation,
+~git push~ is rejected.  Try ~git pull --rebase~ first, then push
+again.  Also, in this situation, ~git pull~ would offer to merge
+changes, leading to an additional commit.  With this command, however,
+remote commits are fetched, and your local commits are re-executed on
+top of that (see
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-rebase][slide on rebase]]).
+Afterwards, ~git push~ should succeed.  In general, for questions that
+I have related to Git, Stack Overflow has answers.  You may want to
+ask in a course-related forum, though.
+
+We work on a playground project here, and it is unlikely that you
+destroy things (well, ~git reset~ and options that “force” actions may
+destroy state; you should not need them).  If your local repository
+seems to be in an inconsistent state, you could just give that up and
+clone again (depending on the amount of work that you did locally; you
+can also copy files from the inconsistent state to a new clone).
+Maybe ask in a course-related forum.
