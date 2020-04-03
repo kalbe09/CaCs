@@ -1,9 +1,12 @@
 # Local IspellDict: en
 #+SPDX-FileCopyrightText: 2020 Jens Lechtenbörger <https://lechten.gitlab.io/#me>
 #+SPDX-License-Identifier: CC-BY-SA-4.0
-#+TITLE: Git Exercise
-#+AUTHOR: Jens Lechtenbörger
-#+OPTIONS: html-style:nil toc:nil
+
+#+KEYWORDS: GitLab, git, exercise, fork, clone, branch, feature branch workflow
+
+# This file is not meant to be exported directly, but to be imported
+# elsewhere.  See there for an example:
+# https://gitlab.com/oer/oer-courses/cacs/blob/master/texts/Git-Exercise.org
 
 * Introduction
 
