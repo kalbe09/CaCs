@@ -78,7 +78,9 @@ In the following, M1, M2, … indicate different group members.
 6. M3: Pull and check out your branch, change the file more, commit,
    and push.
 7. M4: Create a merge request in GitLab for your branch into my
-   ~master~ branch.
+   ~master~ branch.  (On the top of your fork’s project you should see
+   a suggestion to create a merge request for your branch.  Maybe
+   refresh the page.)
 
    When you create merge requests, please fill out the title
    (e.g.., Group 42 - task 1).  The description may remain empty here;
