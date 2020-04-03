@@ -59,8 +59,8 @@ In the following, M1, M2, … indicate different group members.
    sure that you are notified if I open an issue.
 
    Setup SSH keys (see
-   [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-ssh][Git
-   Introduction for pointers]]).
+   [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-ssh][slide
+   on SSH for pointers]]).
 
    Clone the fork to directory “{{{gitproject}}}”.  The necessary address
    (starting with ~@git~) is visible under the Clone button (see
@@ -93,7 +93,7 @@ In the following, M1, M2, … indicate different group members.
 After I merged your branch, my project is ahead of yours.  To bring
 your project up-to-date (possibly including changes of other groups as
 well), please do the following in your project (see
-[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote][Git Introduction on “git remote”]]).
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote][slide on “git remote”]]).
 
 #+begin_src sh
 git remote add upstream <the HTTP URL of original project>
@@ -116,7 +116,7 @@ again.  Also, in this situation, ~git pull~ would offer to merge
 changes, leading to an additional commit.  With this command, however,
 remote commits are fetched, and your local commits are re-executed on
 top of that (see
-[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-rebase][slide on rebase]]).
+[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-rebase][slide on “git rebase”]]).
 Afterwards, ~git push~ should succeed.  In general, for questions that
 I have related to Git, Stack Overflow has answers.  You may want to
 ask in a course-related forum, though.
