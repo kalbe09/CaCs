@@ -59,8 +59,7 @@ In the following, M1, M2, … indicate different group members.
    sure that you are notified if I open an issue.
 
    Setup SSH keys (see
-   [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-ssh][slide
-   on SSH for pointers]]).
+   [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-ssh][slide on SSH for pointers]]).
 
    Clone the fork to directory “{{{gitproject}}}”.  The necessary address
    (starting with ~@git~) is visible under the Clone button (see
