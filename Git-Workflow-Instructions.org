@@ -127,4 +127,5 @@ destroy state; you should not need them).  If your local repository
 seems to be in an inconsistent state, you could just give that up and
 clone again (depending on the amount of work that you did locally; you
 can also copy files from the inconsistent state to a new clone).
-Maybe ask in a course-related forum.
+
+Again, please do not hesitate to ask in a course-related forum.
