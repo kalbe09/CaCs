@@ -8,36 +8,9 @@
 # elsewhere.  See there for an example:
 # https://gitlab.com/oer/oer-courses/cacs/blob/master/texts/Git-Exercise.org
 
-* Introduction
-
-This project is part of a group exercise.
-
-I suppose that you went through the
-[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html][Git Introduction]]
-and installed and set up Git before you start here.
-
-Please be aware that this is a new exercise, which we are going to
-perform jointly for the first time, so there may be rough edges.
-Please do not hesitate to ask early.  Your first steps with Git will
-seem unfamiliar, but my goal is to help you in this unfamiliar
-terrain.  Git is a powerful tool with many commands and options
-(GitLab even more so), but the basic workflow should not be hard to
-follow.  (As an aside: If you really go for Git, you probably want to
-do that embedded in your daily work environment, where the most
-important Git operations are available through some UI.  My daily work
-environment is GNU Emacs with [[https://magit.vc/][Magit]].)
-
-On our GitLab server, I will assign each of you as “Reporter” to my
-project “{{{gitproject}}}”, and GitLab will notify you once that happened.
-(This will take some time because our admins need to create your
-accounts first, before I assign you manually …)
-Then, you can start with this task, which is meant to practice the
-[[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-workflow][feature
-branch workflow mentioned in the Git Introduction]].
-
-In the following, M1, M2, … indicate different group members.
-
 * Tasks
+This task is part of a group exercise.
+In the following, M1, M2, … indicate different group members.
 
 ** Part 1
 [[./gitlab-annotated.png]]
