@@ -2,7 +2,7 @@
 #+SPDX-FileCopyrightText: 2020 Jens Lechtenbörger <https://lechten.gitlab.io/#me>
 #+SPDX-License-Identifier: CC-BY-SA-4.0
 
-#+KEYWORDS: GitLab, git, exercise, fork, clone, branch, feature branch workflow
+#+KEYWORDS: OER, GitLab, git, exercise, fork, clone, branch, feature branch workflow
 
 # This file is not meant to be exported directly, but to be imported
 # elsewhere.  See there for an example:
@@ -110,6 +110,7 @@ During you work, you may see error messages, such as
 succeed if one project is strictly behind or ahead of the other.
 Usually, Git provides some hints how you may proceed.
 
+<<pull-rebase>>
 One important command may be
 ~git pull --rebase~, which you can execute if additional commits
 happened at the remote end as well as at yours.  In this situation,
@@ -131,3 +132,49 @@ clone again (depending on the amount of work that you did locally; you
 can also copy files from the inconsistent state to a new clone).
 
 Again, please do not hesitate to ask in a course-related forum.
+
+* Further Suggestions
+
+Create and resolve a conflict, to see what this is about: Two team
+members, say Alice and Bob, pull their fork’s most recent state.  Both
+edit the same file on the same branch simultaneously, commit, and try
+to push.  Clearly, both commits are based on the same parent commit,
+which implies that they are not nicely ordered.  Hence, one push
+operation will be rejected, say Bob’s.
+
+Given the rejected push, Bob could now ~git pull~
+(don’t do that yet—read on), which is really ~fetch~ followed by
+~merge~, ultimately creating a [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-merge][merge commit]].
+Note that you see two branches on the slide, while you may believe to
+work on one.  That belief would be wrong: You work on your local
+branch, which you try to combine with a second remote branch.
+
+To avoid the merge commit, Bob could
+~git pull --rebase~ to rebase own commits on the current remote
+state as suggested in the [[pull-rebase][previous section]].
+
+In both cases (merge and rebase), Bob has to deal with the fact that
+the same file was edited simultaneously at different places, maybe with
+conflicting or even contradictory contents.  If such conflicts occur,
+Git inserts so-called
+[[https://stackoverflow.com/questions/10657315/git-merge-left-head-marks-in-my-files][conflict markers]]
+to highlight conflicting regions and tells as much on the command line,
+with suggestions for follow-up commands.  It is up to Bob to decide
+what to do with those regions.  Sometimes, Alice’s part may be better
+than his, sometimes the other way round, sometimes both changes may
+complement each other.  In any case, he produces a version in which
+no conflict markers are left, commits, and pushes.
+
+If Bob is lucky, his push succeeds.  If not, somebody, maybe Alice
+again, was faster to commit and push in between, and Bob has to start
+over.  This does not look like an effective workflow, does it?
+
+So, in your team, you also may want to apply the Feature Branch
+Workflow, where each team member works on an own branch (or really on
+branches for specific purposes/features) to commit and push freely,
+only to merge or rebase with the team’s main branch when stable states
+have been reached.  In this case, it is a good practice to rebase the
+individual branch on the most recent state of the team’s main branch
+before merging.
+
+Now, try the above?
