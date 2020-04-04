@@ -450,7 +450,7 @@ git push
          deploy them, generate documentation, presentations, etc.)
 
 ** GitLab in Action
-   - Exercise
+   - {{{gitexercise}}}
 
 * Aside: Lightweight Markup Languages
 ** Lightweight Markup
