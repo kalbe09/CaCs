@@ -8,7 +8,8 @@
 
 # This file uses a macro gitexercise, which needs to defined
 # elsewhere.  In the simplest case, this could just be the text
-# “Exercise”.  Better yet, it points to real instructions, see there:
+# “Exercise”.  Better yet, it points to real instructions based on
+# texts/Git-Workflow-Instructions.org, see there:
 # https://gitlab.com/oer/oer-courses/cacs/blob/master/Git-Introduction.org
 
 * Introduction
