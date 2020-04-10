@@ -120,7 +120,8 @@ Given the rejected push, Bob could now ~git pull~
 ~merge~, ultimately creating a [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-merge][merge commit]].
 Note that you see two branches on the slide, while you may believe to
 work on one.  That belief would be wrong: You work on your local
-branch, which you try to combine with a second remote branch.
+branch with your commits, which you try to combine with a second
+remote branch that potentially includes other commits.
 
 To avoid the merge commit, Bob could
 ~git pull --rebase~ to rebase own commits on the current remote
