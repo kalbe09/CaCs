@@ -78,7 +78,7 @@ git rebase upstream/master
 git push
 #+end_src
 
-During you work, you may see error messages, such as
+During your work, you may see error messages, such as
 ~failed to push some refs~.  In particular, ~pull~ and ~push~ only
 succeed if one project is strictly behind or ahead of the other.
 Usually, Git provides some hints how you may proceed.
