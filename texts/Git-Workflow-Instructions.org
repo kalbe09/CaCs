@@ -71,7 +71,7 @@ well), please do the following in your project (see
 [[https://oer.gitlab.io/oer-courses/cacs/Git-Introduction.html#slide-git-remote][slide on “git remote”]]).
 
 #+begin_src sh
-git remote add upstream <the HTTP URL of original project>
+git remote add upstream <URL of original project>
 git fetch upstream
 git checkout master
 git rebase upstream/master
